@@ -1,0 +1,14 @@
+@import "../selectors";
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Allows for the tooltip to be styled.
+// ---------------------------------------------------------------------------------------------------------------------
+
+body > #{$select-tooltip} {
+	--background-modifier-message: var(--fluent-tooltip-border);
+	background: var(--fluent-tooltip-background);
+	border: var(--fluent-tooltip-border) 1px solid;
+	color: var(--fluent-tooltip-text);
+
+	backdrop-filter: blur(var(--fluent-backdrop-blur));
+}

@@ -1,0 +1,33 @@
+@import "../selectors";
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Add support for changing more colors on focus gained/lost:
+// ---------------------------------------------------------------------------------------------------------------------
+
+body.is-focused {
+	--tab-outline-color: var(--tab-outline-color-focused) !important;
+}
+
+body.is-focused.mod-windows #{$select-titlebar} .titlebar-button {
+	--titlebar-text-color: var(--titlebar-text-color-focused);
+	--background-modifier-hover: var(--fluent-frame-button-background-hover-focused);
+}
+
+body #{$select-titlebar} .titlebar-button {
+	color: var(--titlebar-text-color);
+}
+
+// Dock ribbon should use the focus colors for the title.
+body.is-focused #{$select-workspace} {
+	#{$select-workspace-side-dock} {
+		--ribbon-background: var(--ribbon-background-focused);
+		border-right-color: var(--tab-outline-color-focused);
+	}
+}
+
+// Workspace sidebars.
+body.is-focused #{$select-workspace} {
+	#{$select-workspace-sidebar-content} {
+		background: var(--fluent-frame-secondary-focused);
+	}
+}

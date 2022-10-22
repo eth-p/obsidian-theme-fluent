@@ -1,0 +1,13 @@
+@import "../selectors";
+
+#{$select-workspace} .workspace-tab-header {
+  &.is-active {
+    font-weight: 500;
+  }
+
+  > .workspace-tab-header-inner {
+    > * {
+      font-size: 12px;
+    }
+  }
+}

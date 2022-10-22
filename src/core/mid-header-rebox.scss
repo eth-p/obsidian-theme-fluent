@@ -1,0 +1,12 @@
+@import "../selectors";
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Change the box of the view header.
+//
+// This changes it from margins to padding, which allows the background to fill the full width of the center section.
+// ---------------------------------------------------------------------------------------------------------------------
+
+.view-header {
+    padding: 0 var(--size-4-3);
+    margin: 0;
+}

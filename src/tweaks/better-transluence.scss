@@ -1,0 +1,43 @@
+@import "../selectors";
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Disable default translucent background.
+// Allows for more fine-grained control.
+// ---------------------------------------------------------------------------------------------------------------------
+
+body {
+	--workspace-background-translucent: transparent;
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Add transparent background to header-like elements.
+// ---------------------------------------------------------------------------------------------------------------------
+
+@mixin enable-translucent-background($conditions: "") {
+	body.is-translucent:not(.is-fullscreen)#{$conditions} & {
+		background-color: var(--titlebar-background);
+	}
+
+	body.is-translucent:not(.is-fullscreen).is-focused#{$conditions} & {
+		background-color: var(--titlebar-background-focused, var(--workspace-background-translucent));
+	}
+}
+
+#{$select-titlebar} {
+	@include enable-translucent-background(":not(.is-hidden-frameless)");
+
+	body.is-hidden-frameless & .titlebar-button-container {
+		background-color: transparent !important;
+	}
+}
+
+#{$select-workspace} {
+	#{$select-workspace-headers},
+	#{$select-workspace-side-dock} {
+		@include enable-translucent-background;
+	}
+
+	#{$select-workspace-side-dock} {
+		border-right-color: var(--tab-outline-color);
+	}
+}

@@ -1,0 +1,23 @@
+$select-titlebar: ".titlebar";
+$select-workspace: ".app-container > * > .workspace";
+$select-tooltip: ".tooltip";
+$select-menu: ".menu";
+
+// Header components for the app.
+// e.g. tab bar background, sidebar headers.
+$select-workspace-headers: "\
+	.mod-top .workspace-tab-header-container, \
+	.workspace-tab-header-container, \
+	.workspace-ribbon.side-dock-ribbon.mod-left::before";
+
+// The docked sidebar.
+$select-workspace-side-dock: "\
+	.workspace-ribbon.side-dock-ribbon.mod-left";
+
+$select-workspace-sidebar-content: "\
+	.workspace-split .workspace-tab-container > .workspace-leaf";
+
+// The components of the middle pane.
+$select-mid-container: "#{select-workspace} > .mod-root > .workspace-tabs > .workspace-tab-container > .workspace-leaf > .workspace-leaf-content";
+$select-mid-header: "#{select-mid-container} > .view-header";
+$select-mid-body: "#{select-mid-container} > .mod-root > .workspace-tabs > .workspace-tab-container > .workspace-leaf > .workspace-leaf-content > .view-content";

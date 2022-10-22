@@ -1,0 +1,22 @@
+@use "sass:color";
+@use "sass:list";
+
+// Mixin for generating hsla colors based on the frame focus accent accent.
+@mixin focus-accent-var($name, $values) {
+	$focused-hsl: var(--fluent-focus-accent), #{list.nth($values, 1)}, #{list.nth($values, 2)};
+	--#{$name}: hsl(var(--fluent-focus-accent), 0%, #{list.nth($values, 3)});
+	--#{$name}-focused: hsl(#{$focused-hsl});
+
+	// Translucent.
+	&.is-translucent.is-frameless {
+		@if (#{list.nth($values, 4)} != "true") {
+			--#{$name}: hsl(0deg, 0%, #{list.nth($values, 2)});
+			--#{$name}-focused: hsla(0deg, 0%, #{list.nth($values, 2)}, #{100% - $translucency});
+		}
+	}
+
+	// Native border.
+	&:not(.is-frameless) {
+		--#{$name}-focused: hsl(var(--fluent-focus-accent), #{list.nth($values, 5)}, #{list.nth($values, 3)});
+	}
+}

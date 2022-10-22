@@ -1,0 +1,15 @@
+@import "../selectors";
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Remove the border separating the side dock from the title bar.
+// ---------------------------------------------------------------------------------------------------------------------
+
+#{$select-workspace} {
+	#{$select-workspace-side-dock} {
+		margin-top: calc(var(--header-height) - 1px);
+
+		&::before {
+			border-bottom: none;
+		}
+	}
+}

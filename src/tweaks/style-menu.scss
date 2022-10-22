@@ -1,0 +1,15 @@
+
+
+@import "../selectors";
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Allows for context menus to be styled.
+// ---------------------------------------------------------------------------------------------------------------------
+
+body > #{$select-menu} {
+	background: var(--fluent-menu-background);
+	border-color: var(--fluent-menu-border);
+	color: var(--fluent-menu-text);
+
+	backdrop-filter: blur(var(--fluent-backdrop-blur));
+}

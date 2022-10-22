@@ -1,0 +1,56 @@
+@import "../selectors";
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Add color transitions when changing colours on focus gained/lost:
+// ---------------------------------------------------------------------------------------------------------------------
+
+@mixin transition-frame-background() {
+	will-change: background-color;
+	transition: background-color $animation-speed-window-focus ease;
+}
+
+@mixin transition-button-background() {
+	will-change: background-color;
+	transition: background-color $animation-speed-button-focus ease;
+}
+
+body.is-frameless {
+	// Window controls.
+	#{$select-titlebar} .titlebar-inner > .titlebar-button-container {
+		@include transition-frame-background;
+	}
+
+	// Workspace headers.
+	#{$select-workspace} {
+		#{$select-workspace-headers} {
+			@include transition-frame-background;
+		}
+	}
+
+	// Workspace dock ribbon.
+	#{$select-workspace} {
+		#{$select-workspace-side-dock} {
+			@include transition-frame-background;
+		}
+	}
+
+	// Titlebar in Obsidian frame.
+	&:not(.is-hidden-frameless) {
+		&,
+		#{$select-titlebar} {
+			@include transition-frame-background;
+		}
+	}
+}
+
+// The title bar frame decoration buttons.
+#{$select-titlebar} .titlebar-button-container .titlebar-button {
+	@include transition-button-background;
+}
+
+// Workspace sidebars.
+#{$select-workspace} {
+	#{$select-workspace-sidebar-content} {
+		@include transition-frame-background;
+	}
+}

@@ -1,0 +1,12 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// When using the Obsidian frame and in fullscreen mode, the blank space where the titlebar used to be will use the
+// body color. This fixes that by changing it to use the titlebar color.
+// ---------------------------------------------------------------------------------------------------------------------
+
+body.is-fullscreen {
+	background-color: var(--titlebar-background);
+
+	&.is-focused {
+		background-color: var(--titlebar-background-focused);
+	}
+}

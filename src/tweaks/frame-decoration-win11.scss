@@ -1,0 +1,159 @@
+@use "sass:math";
+
+@import "../selectors";
+
+// -----------------------------------------------------------------------------
+// Change the window frame decorations (minimize, maximize, close buttons) to
+// look more like Windows 11.
+// -----------------------------------------------------------------------------
+
+$rect: 10px;
+$titlebar-margin: 4px;
+$h-padding: 18px;
+$v-height: 40px;
+$v-height-in-obsidian-frame: 28px;
+
+// Resize the titlebar buttons.
+body.mod-windows #{$select-titlebar} .titlebar-button {
+	&.mod-minimize,
+	&.mod-maximize,
+	&.mod-close {
+		padding: 0 $h-padding !important;
+	}
+}
+
+#{$select-titlebar} .titlebar-button {
+	body.mod-windows.is-hidden-frameless & {
+		height: $v-height;
+	}
+
+	body.mod-windows.is-hidden:not(.is-hidden-frameless) & {
+		height: $v-height-in-obsidian-frame;
+	}
+}
+
+body.mod-windows {
+	$original-right-space: 126px;
+	$updated-right-space: $original-right-space - (3 * 14px) + (3 * $h-padding);
+	--frame-right-space: #{$updated-right-space + $titlebar-margin} !important;
+}
+
+// Change the icons.
+body.mod-windows #{$select-titlebar} .titlebar-button {
+	position: relative;
+
+	&.mod-minimize,
+	&.mod-maximize,
+	&.mod-close {
+		& > svg {
+			visibility: hidden;
+			width: $rect;
+			height: $rect;
+		}
+
+		&::before,
+		&::after {
+			display: block;
+			content: "";
+
+			position: absolute;
+			top: calc(100% / 2 - math.div($rect, 2));
+			left: $h-padding;
+			width: $rect;
+			height: $rect;
+			background: currentColor;
+		}
+
+		&::after {
+			display: none;
+		}
+	}
+}
+
+// Minimize button.
+body.mod-windows #{$select-titlebar} .mod-minimize::before {
+	$stroke: 1px;
+	$offs: 5.5px;
+
+	clip-path: polygon(
+		0 ($offs - math.div($stroke, 2)),
+		0 ($offs + math.div($stroke, 2)),
+		$rect ($offs + math.div($stroke, 2)),
+		$rect ($offs - math.div($stroke, 2))
+	);
+}
+
+// Maximize button.
+body.mod-windows:not(.is-maximized) #{$select-titlebar} .mod-maximize {
+	$stroke: 1px;
+
+	&::before {
+		clip-path: polygon(
+			0 0,
+			0 $rect,
+			$rect $rect,
+			$rect 0,
+			0 0,
+			$stroke $stroke,
+			($rect - $stroke) $stroke,
+			($rect - $stroke) ($rect - $stroke),
+			$stroke ($rect - $stroke),
+			$stroke $stroke
+		);
+	}
+}
+
+body.mod-windows.is-maximized #{$select-titlebar} .mod-maximize {
+	$stroke: 1px;
+
+	&::before {
+		clip-path: polygon(
+			0 (2px),
+			0 ($rect),
+			($rect - 2px) ($rect),
+			($rect - 2px) (2px),
+			0 (2px),
+			$stroke (2px + $stroke),
+			($rect - $stroke - 2px) (2px + $stroke),
+			($rect - $stroke - 2px) ($rect - $stroke),
+			$stroke ($rect - $stroke),
+			$stroke (2px + $stroke)
+		);
+	}
+
+	&::after {
+		display: block;
+		clip-path: polygon(
+			(2px) 3px,
+			(2px) 0,
+			$rect 0,
+			$rect ($rect - 2px),
+			($rect - 3px) ($rect - 2px),
+			($rect - 3px) ($rect - 2px),
+			($rect - $stroke) ($rect - 3px),
+			($rect - $stroke) $stroke,
+			(3px) $stroke,
+			(3px) 3px
+		);
+	}
+}
+
+// Close button.
+body.mod-windows #{$select-titlebar} .mod-close::before {
+	$stroke: 1px;
+
+	clip-path: polygon(
+		math.div($rect, 2) (math.div($rect, 2) - math.div($stroke, 2)),
+		math.div($stroke, 2) 0,
+		0 math.div($stroke, 2),
+		(math.div($rect, 2) - math.div($stroke, 2)) math.div($rect, 2),
+		0 ($rect - math.div($stroke, 2)),
+		math.div($stroke, 2) ($rect),
+		(math.div($rect, 2)) (math.div($rect, 2) + math.div($stroke, 2)),
+		($rect - math.div($stroke, 2)) ($rect),
+		($rect) ($rect - math.div($stroke, 2)),
+		(math.div($rect, 2) + math.div($stroke, 2)) math.div($rect, 2),
+		($rect) math.div($stroke, 2),
+		($rect - math.div($stroke, 2)) 0
+	);
+}

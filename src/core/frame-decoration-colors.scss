@@ -1,0 +1,42 @@
+@import "../selectors";
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Change frame decoration button hover colors.
+// ---------------------------------------------------------------------------------------------------------------------
+
+// Minimize/maximize buttons.
+// Uses a different color scheme than other title elements.
+#{$select-titlebar} .titlebar-button {
+	--titlebar-text-color: var(--fluent-frame-button-text);
+	--titlebar-text-color-focused: var(--fluent-frame-button-text-focused);
+	--background-modifier-hover: var(--fluent-frame-button-background-hover);
+}
+
+// Close button.
+// Windows 11 uses a darker red than the default provided by Obsidian.
+body.mod-windows #{$select-titlebar} .titlebar-button.mod-close {
+	&:hover,
+	&:focus {
+		--background-modifier-error: var(--fluent-frame-close-background-hover);
+		color: var(--fluent-frame-close-text-hover) !important;
+	}
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Allow tab headers to adopt background color of frame.
+// This fits more in line with Explorer and Windows Terminal.
+// ---------------------------------------------------------------------------------------------------------------------
+
+#{$select-workspace} > .mod-root {
+	background: transparent;
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Give the sidebars the secondary title color.
+// ---------------------------------------------------------------------------------------------------------------------
+
+#{$select-workspace} {
+	#{$select-workspace-sidebar-content} {
+		background: var(--fluent-frame-secondary);
+	}
+}

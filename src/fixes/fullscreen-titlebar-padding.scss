@@ -1,0 +1,10 @@
+@import "../selectors";
+
+// ---------------------------------------------------------------------------------------------------------------------
+// When using the Obsidian frame and in fullscreen mode, there is a lot of extra padding.
+// This removes that padding.
+// ---------------------------------------------------------------------------------------------------------------------
+
+body.is-fullscreen.is-frameless:not(.is-hidden-frameless) {
+	padding-top: 0;
+}
