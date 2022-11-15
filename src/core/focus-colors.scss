@@ -21,6 +21,7 @@ body #{$select-titlebar} .titlebar-button {
 body.is-focused #{$select-workspace} {
 	#{$select-workspace-side-dock} {
 		--ribbon-background: var(--ribbon-background-focused);
+		--ribbon-background-collapsed: var(--ribbon-background-collapsed-focused);
 		border-right-color: var(--tab-outline-color-focused);
 	}
 }

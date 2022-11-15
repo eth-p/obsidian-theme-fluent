@@ -50,6 +50,7 @@
 	// Window frame title bar.
 	@include focus-accent-var("titlebar-background", map.get($colors, "frame-title"));
 	@include focus-accent-var("ribbon-background", map.get($colors, "frame-title"));
+	@include focus-accent-var("ribbon-background-collapsed", map.get($colors, "frame-title"));
 	@include focus-accent-var("tab-outline-color", map.get($colors, "frame-tab-border"));
 	&.is-translucent:not(.is-frameless) {
 		--titlebar-background: #{list.nth(map.get($colors, "frame-title"), 6)};
