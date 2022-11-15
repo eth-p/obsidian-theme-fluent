@@ -25,10 +25,3 @@ body.is-focused #{$select-workspace} {
 		border-right-color: var(--tab-outline-color-focused);
 	}
 }
-
-// Workspace sidebars.
-body.is-focused #{$select-workspace} {
-	#{$select-workspace-sidebar-content} {
-		background: var(--fluent-frame-secondary-focused);
-	}
-}

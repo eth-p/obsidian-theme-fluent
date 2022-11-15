@@ -14,8 +14,18 @@ $select-workspace-headers: "\
 $select-workspace-side-dock: "\
 	.workspace-ribbon.side-dock-ribbon.mod-left";
 
+// The workspace splits.
+$select-workspace-main-tabs: "\
+	.workspace-split.mod-root > .workspace-tabs \
+	> .workspace-tab-header-container \
+	> .workspace-tab-header-container-inner \
+";
+
+$select-workspace-main-content: "\
+	.workspace-split.mod-root > .workspace-tabs > .workspace-tab-container > .workspace-leaf";
+
 $select-workspace-sidebar-content: "\
-	.workspace-split .workspace-tab-container > .workspace-leaf";
+	.workspace-split:not(.mod-root) .workspace-tab-container > .workspace-leaf";
 
 // The components of the middle pane.
 $select-mid-container: "#{select-workspace} > .mod-root > .workspace-tabs > .workspace-tab-container > .workspace-leaf > .workspace-leaf-content";

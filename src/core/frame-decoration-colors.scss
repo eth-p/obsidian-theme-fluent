@@ -30,13 +30,3 @@ body.mod-windows #{$select-titlebar} .titlebar-button.mod-close {
 #{$select-workspace} > .mod-root {
 	background: transparent;
 }
-
-// ---------------------------------------------------------------------------------------------------------------------
-// Give the sidebars the secondary title color.
-// ---------------------------------------------------------------------------------------------------------------------
-
-#{$select-workspace} {
-	#{$select-workspace-sidebar-content} {
-		background: var(--fluent-frame-secondary);
-	}
-}

@@ -5,5 +5,5 @@
 // ---------------------------------------------------------------------------------------------------------------------
 
 body.is-hidden-frameless #{$select-workspace} > .workspace-split > .workspace-leaf-resize-handle {
-	clip-path: inset(var(--header-height) 0 0 0);
+	clip-path: inset(calc(var(--header-height) + var(--fluent-nav-height)) 0 0 0);
 }

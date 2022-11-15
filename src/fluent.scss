@@ -33,6 +33,7 @@
 @import "./tweaks/focus-colors-transition";
 @import "./tweaks/frame-decoration-win11";
 @import "./tweaks/weld-side-dock-and-title";
+@import "./tweaks/weld-nav-headers-and-title";
 @import "./tweaks/resize-sidebar-drag-handles";
 @import "./tweaks/tab-header-active";
 
@@ -98,6 +99,7 @@
 
 body {
 	--fluent-backdrop-blur: #{$backdrop-blur};
+	--fluent-nav-height: #{$navbar-height};
 	--icon-opacity-hover: var(--icon-opacity);
 }
 

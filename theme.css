@@ -6,6 +6,10 @@
   font-size: 12px;
 }
 
+.app-container > * > .workspace .workspace-split:not(.mod-root) .workspace-tab-container > .workspace-leaf {
+  background: var(--background-secondary) !important;
+}
+
 body.is-focused {
   --tab-outline-color: var(--tab-outline-color-focused) !important;
 }
@@ -25,10 +29,6 @@ body.is-focused .app-container > * > .workspace .workspace-ribbon.side-dock-ribb
   border-right-color: var(--tab-outline-color-focused);
 }
 
-body.is-focused .app-container > * > .workspace .workspace-split .workspace-tab-container > .workspace-leaf {
-  background: var(--fluent-frame-secondary-focused);
-}
-
 .titlebar .titlebar-button {
   --titlebar-text-color: var(--fluent-frame-button-text);
   --titlebar-text-color-focused: var(--fluent-frame-button-text-focused);
@@ -42,10 +42,6 @@ body.mod-windows .titlebar .titlebar-button.mod-close:hover, body.mod-windows .t
 
 .app-container > * > .workspace > .mod-root {
   background: transparent;
-}
-
-.app-container > * > .workspace .workspace-split .workspace-tab-container > .workspace-leaf {
-  background: var(--fluent-frame-secondary);
 }
 
 .view-header {
@@ -113,12 +109,12 @@ body.is-frameless:not(.is-hidden-frameless) .titlebar {
   transition: background-color 0.2s ease;
 }
 
-.app-container > * > .workspace .workspace-split .workspace-tab-container > .workspace-leaf {
+.app-container > * > .workspace .workspace-split:not(.mod-root) .workspace-tab-container > .workspace-leaf {
   will-change: background-color;
   transition: background-color 0.4s ease;
 }
 
-.app-container > * > .workspace .workspace-split .workspace-tab-container > .workspace-leaf {
+.app-container > * > .workspace .workspace-split:not(.mod-root) .workspace-tab-container > .workspace-leaf {
   will-change: background-color;
   transition: background-color 0.4s ease;
 }
@@ -187,8 +183,47 @@ body.mod-windows .titlebar .mod-close::before {
   border-bottom: none;
 }
 
+.app-container > * > .workspace .workspace-split.mod-root > .workspace-tabs > .workspace-tab-container > .workspace-leaf > .workspace-leaf-content > .view-header,
+.app-container > * > .workspace .workspace-split:not(.mod-root) .workspace-tab-container > .workspace-leaf > .workspace-leaf-content > .view-header,
+.app-container > * > .workspace .workspace-split:not(.mod-root) .workspace-tab-container > .workspace-leaf > .workspace-leaf-content > .nav-header {
+  min-height: var(--fluent-nav-height);
+  height: var(--fluent-nav-height);
+  border-bottom: var(--divider-color) 1px solid;
+  will-change: background-color;
+  transition: background-color 0.4s ease;
+  background: var(--fluent-frame-secondary);
+}
+body.is-focused .app-container > * > .workspace .workspace-split.mod-root > .workspace-tabs > .workspace-tab-container > .workspace-leaf > .workspace-leaf-content > .view-header,
+body.is-focused .app-container > * > .workspace .workspace-split:not(.mod-root) .workspace-tab-container > .workspace-leaf > .workspace-leaf-content > .view-header,
+body.is-focused .app-container > * > .workspace .workspace-split:not(.mod-root) .workspace-tab-container > .workspace-leaf > .workspace-leaf-content > .nav-header {
+  background: var(--fluent-frame-secondary-focused);
+}
+.app-container > * > .workspace .workspace-split.mod-root > .workspace-tabs > .workspace-tab-container > .workspace-leaf > .workspace-leaf-content > .view-header > .view-header-title-container::after {
+  display: none;
+}
+.app-container > * > .workspace .workspace-split:not(.mod-root) .workspace-tab-container > .workspace-leaf > .workspace-leaf-content > .view-header {
+  display: block !important;
+}
+.app-container > * > .workspace .workspace-split:not(.mod-root) .workspace-tab-container > .workspace-leaf > .workspace-leaf-content > .view-header > * {
+  display: none;
+}
+.app-container > * > .workspace .workspace-split.mod-root > .workspace-tabs > .workspace-tab-header-container > .workspace-tab-header-container-inner {
+  --tab-background-active: var(--fluent-frame-secondary);
+}
+.app-container > * > .workspace .workspace-split.mod-root > .workspace-tabs > .workspace-tab-header-container > .workspace-tab-header-container-inner > .workspace-tab-header:not(:hover).is-active {
+  will-change: background-color;
+  transition: background-color 0.4s ease;
+}
+.app-container > * > .workspace .workspace-split.mod-root > .workspace-tabs > .workspace-tab-header-container > .workspace-tab-header-container-inner > .workspace-tab-header:not(:hover).is-active::before, .app-container > * > .workspace .workspace-split.mod-root > .workspace-tabs > .workspace-tab-header-container > .workspace-tab-header-container-inner > .workspace-tab-header:not(:hover).is-active::after {
+  will-change: box-shadow;
+  transition: box-shadow 0.4s ease;
+}
+body.is-focused .app-container > * > .workspace .workspace-split.mod-root > .workspace-tabs > .workspace-tab-header-container > .workspace-tab-header-container-inner {
+  --tab-background-active: var(--fluent-frame-secondary-focused);
+}
+
 body.is-hidden-frameless .app-container > * > .workspace > .workspace-split > .workspace-leaf-resize-handle {
-  clip-path: inset(var(--header-height) 0 0 0);
+  clip-path: inset(calc(var(--header-height) + var(--fluent-nav-height)) 0 0 0);
 }
 
 .app-container > * > .workspace .mod-top-left-space .workspace-tab-header.is-active > .workspace-tab-header-inner,
@@ -228,6 +263,7 @@ body > .menu {
 
 body {
   --fluent-backdrop-blur: 20px;
+  --fluent-nav-height: 42px;
   --icon-opacity-hover: var(--icon-opacity);
 }
 
