@@ -1,18 +1,10 @@
 @import "../selectors";
+@import "../animations";
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Add color transitions when changing colours on focus gained/lost:
 // ---------------------------------------------------------------------------------------------------------------------
 
-@mixin transition-frame-background() {
-	will-change: background-color;
-	transition: background-color $animation-speed-window-focus ease;
-}
-
-@mixin transition-button-background() {
-	will-change: background-color;
-	transition: background-color $animation-speed-button-focus ease;
-}
 
 body.is-frameless {
 	// Window controls.
@@ -46,6 +38,13 @@ body.is-frameless {
 // The title bar frame decoration buttons.
 #{$select-titlebar} .titlebar-button-container .titlebar-button {
 	@include transition-button-background;
+}
+
+// Workspace sidebars.
+#{$select-workspace} {
+	#{$select-workspace-sidebar-content} {
+		@include transition-frame-background;
+	}
 }
 
 // Workspace sidebars.

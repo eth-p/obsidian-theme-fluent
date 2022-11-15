@@ -1,0 +1,9 @@
+@mixin transition-frame-background() {
+	will-change: background-color;
+	transition: background-color $animation-speed-window-focus ease;
+}
+
+@mixin transition-button-background() {
+	will-change: background-color;
+	transition: background-color $animation-speed-button-focus ease;
+}

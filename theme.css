@@ -118,6 +118,11 @@ body.is-frameless:not(.is-hidden-frameless) .titlebar {
   transition: background-color 0.4s ease;
 }
 
+.app-container > * > .workspace .workspace-split .workspace-tab-container > .workspace-leaf {
+  will-change: background-color;
+  transition: background-color 0.4s ease;
+}
+
 body.mod-windows .titlebar .titlebar-button.mod-minimize, body.mod-windows .titlebar .titlebar-button.mod-maximize, body.mod-windows .titlebar .titlebar-button.mod-close {
   padding: 0 18px !important;
 }
