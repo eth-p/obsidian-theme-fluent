@@ -7,8 +7,6 @@
 @import "utils";
 @import "config";
 
-@layer fluent, fluent-tweak;
-
 // ---------------------------------------------------------------------------------------------------------------------
 // Core:
 // ---------------------------------------------------------------------------------------------------------------------
@@ -78,6 +76,7 @@
 	}
 
 	// Misc.
+	--background-secondary: #{map.get($colors, "sidebar-background")};
 	--background-modifier-hover: #{map.get($colors, "hover-overlay")};
 	--icon-color: #{map.get($colors, "icon")};
 	--icon-color-focused: #{map.get($colors, "icon-focused")};

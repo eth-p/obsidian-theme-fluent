@@ -1,4 +1,3 @@
-@layer fluent, fluent-tweak;
 .app-container > * > .workspace .workspace-tab-header.is-active {
   font-weight: 500;
 }
@@ -65,10 +64,10 @@ body {
 }
 
 body.is-translucent:not(.is-fullscreen):not(.is-hidden-frameless) .titlebar {
-  background-color: var(--titlebar-background);
+  background-color: var(--titlebar-background) !important;
 }
 body.is-translucent:not(.is-fullscreen).is-focused:not(.is-hidden-frameless) .titlebar {
-  background-color: var(--titlebar-background-focused, var(--workspace-background-translucent));
+  background-color: var(--titlebar-background-focused, var(--workspace-background-translucent)) !important;
 }
 body.is-hidden-frameless .titlebar .titlebar-button-container {
   background-color: transparent !important;
@@ -76,11 +75,11 @@ body.is-hidden-frameless .titlebar .titlebar-button-container {
 
 body.is-translucent:not(.is-fullscreen) .app-container > * > .workspace .mod-top .workspace-tab-header-container, body.is-translucent:not(.is-fullscreen) .app-container > * > .workspace .workspace-tab-header-container, body.is-translucent:not(.is-fullscreen) .app-container > * > .workspace .workspace-ribbon.side-dock-ribbon.mod-left::before,
 body.is-translucent:not(.is-fullscreen) .app-container > * > .workspace .workspace-ribbon.side-dock-ribbon.mod-left {
-  background-color: var(--titlebar-background);
+  background-color: var(--titlebar-background) !important;
 }
 body.is-translucent:not(.is-fullscreen).is-focused .app-container > * > .workspace .mod-top .workspace-tab-header-container, body.is-translucent:not(.is-fullscreen).is-focused .app-container > * > .workspace .workspace-tab-header-container, body.is-translucent:not(.is-fullscreen).is-focused .app-container > * > .workspace .workspace-ribbon.side-dock-ribbon.mod-left::before,
 body.is-translucent:not(.is-fullscreen).is-focused .app-container > * > .workspace .workspace-ribbon.side-dock-ribbon.mod-left {
-  background-color: var(--titlebar-background-focused, var(--workspace-background-translucent));
+  background-color: var(--titlebar-background-focused, var(--workspace-background-translucent)) !important;
 }
 .app-container > * > .workspace .workspace-ribbon.side-dock-ribbon.mod-left {
   border-right-color: var(--tab-outline-color);
@@ -278,7 +277,7 @@ body.theme-light {
   --tab-outline-color: hsl(var(--fluent-focus-accent), 0%, 85.5%);
   --tab-outline-color-focused: hsl(var(--fluent-focus-accent), 27.5%, 82.2%);
   --fluent-frame-secondary: hsl(var(--fluent-focus-accent), 0%, 97.25%);
-  --fluent-frame-secondary-focused: hsl(var(--fluent-focus-accent), 36.84%, 96.27%);
+  --fluent-frame-secondary-focused: hsl(var(--fluent-focus-accent), 26.84%, 96.27%);
   --fluent-frame-button-text: #929292;
   --fluent-frame-button-text-hover: ;
   --fluent-frame-close-text-hover: #ffffff;
@@ -290,6 +289,7 @@ body.theme-light {
   	35%,
   	0.0823529412
   );
+  --background-secondary: #ffffff;
   --background-modifier-hover: rgba(0, 0, 0, 0.0509803922);
   --icon-color: #191919;
   --icon-color-focused: #191919;
@@ -353,7 +353,7 @@ body.theme-dark {
   --tab-outline-color: hsl(var(--fluent-focus-accent), 0%, 11.37%);
   --tab-outline-color-focused: hsl(var(--fluent-focus-accent), 100%, 6.08%);
   --fluent-frame-secondary: hsl(var(--fluent-focus-accent), 0%, 17.25%);
-  --fluent-frame-secondary-focused: hsl(var(--fluent-focus-accent), 25.71%, 13.73%);
+  --fluent-frame-secondary-focused: hsl(var(--fluent-focus-accent), 10.71%, 15.73%);
   --fluent-frame-button-text: #929292;
   --fluent-frame-button-text-hover: ;
   --fluent-frame-close-text-hover: #ffffff;
@@ -365,6 +365,7 @@ body.theme-dark {
   	35%,
   	0.0823529412
   );
+  --background-secondary: #1e1e1e;
   --background-modifier-hover: rgba(255, 255, 255, 0.0509803922);
   --icon-color: #e8eaed;
   --icon-color-focused: #e8eaed;

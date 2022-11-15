@@ -38,7 +38,7 @@ $light-theme: (
 	// frame-title: (41.5%, 87.3%, 91%),
 	frame-title: (41.5%, 87.3%, 95.294%, false, 42.85%, #ffffff),
 	frame-tab-border: (27.5%, 82.2%, 85.5%, false, 0%),
-	frame-secondary: (36.84%, 96.27%, 97.25%, true, 0%, #000),
+	frame-secondary: (26.84%, 96.27%, 97.25%, true, 0%, #000),
 
 	// Frame decorations: minimize, maximize, close.
 	frame-button-background-hover: #00000015,
@@ -64,7 +64,10 @@ $light-theme: (
 	menu-text: #000,
 
 	// Tabs.
-	tab-text: #555555
+	tab-text: #555555,
+
+	// Sidebar.
+	sidebar-background: #ffffff,
 );
 
 $dark-theme: (
@@ -77,7 +80,7 @@ $dark-theme: (
 	// frame-title: (41.5%, 87.3%, 91%),
 	frame-title: (100%, 6.27%, 13.72%, false, 42.85%, #202020),
 	frame-tab-border: (100%, 6.08%, 11.37%, false, 0%),
-	frame-secondary: (25.71%, 13.73%, 17.25%, true, 0%, #000),
+	frame-secondary: (10.71%, 15.73%, 17.25%, true, 0%, #000),
 
 	// Frame decorations: minimize, maximize, close.
 	frame-button-background-hover: #ffffff15,
@@ -104,4 +107,7 @@ $dark-theme: (
 
 	// Tabs.
 	tab-text: #cccccc,
+
+	// Sidebar.
+	sidebar-background: #1e1e1e,
 );

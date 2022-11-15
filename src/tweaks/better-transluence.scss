@@ -15,11 +15,11 @@ body {
 
 @mixin enable-translucent-background($conditions: "") {
 	body.is-translucent:not(.is-fullscreen)#{$conditions} & {
-		background-color: var(--titlebar-background);
+		background-color: var(--titlebar-background) !important;
 	}
 
 	body.is-translucent:not(.is-fullscreen).is-focused#{$conditions} & {
-		background-color: var(--titlebar-background-focused, var(--workspace-background-translucent));
+		background-color: var(--titlebar-background-focused, var(--workspace-background-translucent)) !important;
 	}
 }
 
