@@ -98,8 +98,11 @@
 
 body {
 	--fluent-backdrop-blur: #{$backdrop-blur};
-	--fluent-nav-height: #{$navbar-height};
 	--icon-opacity-hover: var(--icon-opacity);
+
+	&.show-view-header {
+		--fluent-nav-height: #{$navbar-height};
+	}
 }
 
 body.theme-light {

@@ -5,7 +5,7 @@
 // Remove the border separating the side dock from the title bar.
 // ---------------------------------------------------------------------------------------------------------------------
 
-#{$select-workspace} {
+body.show-view-header #{$select-workspace} {
 	#{$select-workspace-main-content} > .workspace-leaf-content > .view-header,
 	#{$select-workspace-sidebar-content} > .workspace-leaf-content > .view-header,
 	#{$select-workspace-sidebar-content} > .workspace-leaf-content > .nav-header {
