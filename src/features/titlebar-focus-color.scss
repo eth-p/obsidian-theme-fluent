@@ -1,0 +1,25 @@
+%titlebar #{$select-when-app-focus} {
+
+    // Change the titlebar button colors.
+    @include when-windows {
+        .titlebar-button {
+            --titlebar-text-color: var(--titlebar-text-color-focused);
+            --background-modifier-hover: var(--fluent-frame-button-background-hover-focused);
+        }
+    }
+
+}
+
+%ribbon #{$select-when-app-focus} {
+    --ribbon-background: var(--ribbon-background-focused);
+    --ribbon-background-collapsed: var(--ribbon-background-collapsed-focused);
+    border-right-color: var(--tab-outline-color-focused);
+}
+
+%ribbon.mod-left #{$select-when-app-focus} {
+    border-right-color: var(--tab-outline-color-focused);
+}
+
+%ribbon.mod-right #{$select-when-app-focus} {
+    border-left-color: var(--tab-outline-color-focused);
+}

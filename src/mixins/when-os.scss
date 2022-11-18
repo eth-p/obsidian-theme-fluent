@@ -1,0 +1,35 @@
+// Applies the contents when the application is running on a specific operating system.
+// Possible OSes:
+//  - `windows`
+//  - `mac`
+//  - `linux`
+//
+// @param $os {string} The operating system.
+$select-when-windows: ":--parent(body):is(.mod-windows)";
+$select-when-mac: ":--parent(body):is(.mod-macos)";
+$select-when-linux: ":--parent(body):is(.mod-linux)";
+
+@mixin when-os($os) {
+	@if $os == "windows" {
+		#{$select-when-windows} {
+			@content;
+		}
+	} @else if $os == "mac" {
+		#{$select-when-mac} {
+			@content;
+		}
+	} @else if $os == "linux" {
+		#{$select-when-linux} {
+			@content;
+		}
+	} @else {
+		@error "unknown os: #{$os}";
+	}
+}
+
+// Applies the contents when the application is running on a Windows operating system.
+@mixin when-windows {
+	@include when-os("windows") {
+		@content;
+	}
+}

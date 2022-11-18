@@ -1,0 +1,15 @@
+@import "../selectors";
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Make the drag handles not cover the title bar in hidden frame style.
+// ---------------------------------------------------------------------------------------------------------------------
+
+body.is-hidden-frameless #{$select-workspace} {
+
+	.workspace-split > .workspace-leaf-resize-handle,                           // Sidebar
+	.workspace-split.mod-root > .workspace-tabs > .workspace-leaf-resize-handle // Splits
+	{
+		clip-path: inset(calc(var(--header-height) + var(--fluent-nav-height, 0px)) 0 0 0);
+	}
+
+}

@@ -1,0 +1,6 @@
+// A docked workspace sidebar.
+%workspace-sidebar {}
+
+%workspace > .workspace-split:not(.mod-root) {
+    @extend %workspace-sidebar;
+}

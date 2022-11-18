@@ -1,0 +1,6 @@
+// Obsidian's left-docked ribbon.
+%ribbon {}
+
+%workspace > .workspace-ribbon.side-dock-ribbon {
+    @extend %titlebar;
+}

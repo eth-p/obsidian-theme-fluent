@@ -1,147 +1,36 @@
-.app-container > * > .workspace .workspace-tab-header.is-active {
-  font-weight: 500;
-}
-.app-container > * > .workspace .workspace-tab-header > .workspace-tab-header-inner > * {
-  font-size: 12px;
-}
-
-.app-container > * > .workspace .workspace-split:not(.mod-root) .workspace-tab-container > .workspace-leaf {
-  background: var(--background-secondary) !important;
-}
-
-body.is-focused {
-  --tab-outline-color: var(--tab-outline-color-focused) !important;
-}
-
-body.is-focused.mod-windows .titlebar .titlebar-button {
-  --titlebar-text-color: var(--titlebar-text-color-focused);
-  --background-modifier-hover: var(--fluent-frame-button-background-hover-focused);
-}
-
-body .titlebar .titlebar-button {
-  color: var(--titlebar-text-color);
-}
-
-body.is-focused .app-container > * > .workspace .workspace-ribbon.side-dock-ribbon.mod-left {
-  --ribbon-background: var(--ribbon-background-focused);
-  --ribbon-background-collapsed: var(--ribbon-background-collapsed-focused);
-  border-right-color: var(--tab-outline-color-focused);
-}
-
-.titlebar .titlebar-button {
+body.is-focused > .titlebar  .titlebar-button, body.is-focused .workspace > .workspace-ribbon.side-dock-ribbon  .titlebar-button {
   --titlebar-text-color: var(--fluent-frame-button-text);
   --titlebar-text-color-focused: var(--fluent-frame-button-text-focused);
   --background-modifier-hover: var(--fluent-frame-button-background-hover);
 }
-
-body.mod-windows .titlebar .titlebar-button.mod-close:hover, body.mod-windows .titlebar .titlebar-button.mod-close:focus {
+body.mod-windows.is-focused > .titlebar   .titlebar-button.mod-close:hover, body.mod-windows.is-focused .workspace > .workspace-ribbon.side-dock-ribbon   .titlebar-button.mod-close:hover, body.mod-windows.is-focused > .titlebar   .titlebar-button.mod-close:focus, body.mod-windows.is-focused .workspace > .workspace-ribbon.side-dock-ribbon   .titlebar-button.mod-close:focus {
   --background-modifier-error: var(--fluent-frame-close-background-hover);
   color: var(--fluent-frame-close-text-hover) !important;
 }
 
-.app-container > * > .workspace > .mod-root {
-  background: transparent;
-}
-
-.view-header {
-  padding: 0 var(--size-4-3);
-  margin: 0;
-}
-
-body.is-fullscreen {
-  background-color: var(--titlebar-background);
-}
-body.is-fullscreen.is-focused {
-  background-color: var(--titlebar-background-focused);
-}
-
-body.is-fullscreen.is-frameless:not(.is-hidden-frameless) {
-  padding-top: 0;
-}
-
-body {
-  --workspace-background-translucent: transparent;
-}
-
-body.is-translucent:not(.is-fullscreen):not(.is-hidden-frameless) .titlebar {
-  background-color: var(--titlebar-background) !important;
-}
-body.is-translucent:not(.is-fullscreen).is-focused:not(.is-hidden-frameless) .titlebar {
-  background-color: var(--titlebar-background-focused, var(--workspace-background-translucent)) !important;
-}
-body.is-hidden-frameless .titlebar .titlebar-button-container {
-  background-color: transparent !important;
-}
-
-body.is-translucent:not(.is-fullscreen) .app-container > * > .workspace .mod-top .workspace-tab-header-container, body.is-translucent:not(.is-fullscreen) .app-container > * > .workspace .workspace-tab-header-container, body.is-translucent:not(.is-fullscreen) .app-container > * > .workspace .workspace-ribbon.side-dock-ribbon.mod-left::before,
-body.is-translucent:not(.is-fullscreen) .app-container > * > .workspace .workspace-ribbon.side-dock-ribbon.mod-left {
-  background-color: var(--titlebar-background) !important;
-}
-body.is-translucent:not(.is-fullscreen).is-focused .app-container > * > .workspace .mod-top .workspace-tab-header-container, body.is-translucent:not(.is-fullscreen).is-focused .app-container > * > .workspace .workspace-tab-header-container, body.is-translucent:not(.is-fullscreen).is-focused .app-container > * > .workspace .workspace-ribbon.side-dock-ribbon.mod-left::before,
-body.is-translucent:not(.is-fullscreen).is-focused .app-container > * > .workspace .workspace-ribbon.side-dock-ribbon.mod-left {
-  background-color: var(--titlebar-background-focused, var(--workspace-background-translucent)) !important;
-}
-.app-container > * > .workspace .workspace-ribbon.side-dock-ribbon.mod-left {
-  border-right-color: var(--tab-outline-color);
-}
-
-body.is-frameless .titlebar .titlebar-inner > .titlebar-button-container {
-  will-change: background-color;
-  transition: background-color 0.4s ease;
-}
-body.is-frameless .app-container > * > .workspace .mod-top .workspace-tab-header-container, body.is-frameless .app-container > * > .workspace .workspace-tab-header-container, body.is-frameless .app-container > * > .workspace .workspace-ribbon.side-dock-ribbon.mod-left::before {
-  will-change: background-color;
-  transition: background-color 0.4s ease;
-}
-body.is-frameless .app-container > * > .workspace .workspace-ribbon.side-dock-ribbon.mod-left {
-  will-change: background-color;
-  transition: background-color 0.4s ease;
-}
-body.is-frameless:not(.is-hidden-frameless),
-body.is-frameless:not(.is-hidden-frameless) .titlebar {
-  will-change: background-color;
-  transition: background-color 0.4s ease;
-}
-
-.titlebar .titlebar-button-container .titlebar-button {
-  will-change: background-color;
-  transition: background-color 0.2s ease;
-}
-
-.app-container > * > .workspace .workspace-split:not(.mod-root) .workspace-tab-container > .workspace-leaf {
-  will-change: background-color;
-  transition: background-color 0.4s ease;
-}
-
-.app-container > * > .workspace .workspace-split:not(.mod-root) .workspace-tab-container > .workspace-leaf {
-  will-change: background-color;
-  transition: background-color 0.4s ease;
-}
-
-body.mod-windows .titlebar .titlebar-button.mod-minimize, body.mod-windows .titlebar .titlebar-button.mod-maximize, body.mod-windows .titlebar .titlebar-button.mod-close {
+body.mod-windows > .titlebar  .titlebar-button.mod-minimize, body.mod-windows .workspace > .workspace-ribbon.side-dock-ribbon  .titlebar-button.mod-minimize, body.mod-windows > .titlebar  .titlebar-button.mod-maximize, body.mod-windows .workspace > .workspace-ribbon.side-dock-ribbon  .titlebar-button.mod-maximize, body.mod-windows > .titlebar  .titlebar-button.mod-close, body.mod-windows .workspace > .workspace-ribbon.side-dock-ribbon  .titlebar-button.mod-close {
   padding: 0 18px !important;
 }
-
-body.mod-windows.is-hidden-frameless .titlebar .titlebar-button {
+body.is-hidden-frameless.mod-windows > .titlebar  .titlebar-button , body.is-hidden-frameless.mod-windows .workspace > .workspace-ribbon.side-dock-ribbon  .titlebar-button  {
   height: 40px;
 }
-body.mod-windows.is-hidden:not(.is-hidden-frameless) .titlebar .titlebar-button {
+body.is-frameless:not(.is-hidden-frameless).mod-windows > .titlebar  .titlebar-button , body.is-frameless:not(.is-hidden-frameless).mod-windows .workspace > .workspace-ribbon.side-dock-ribbon  .titlebar-button  {
   height: 28px;
 }
 
-body.mod-windows {
+body.mod-windows  {
   --frame-right-space: 142px !important;
 }
 
-body.mod-windows .titlebar .titlebar-button {
+body.mod-windows > .titlebar  .titlebar-button, body.mod-windows .workspace > .workspace-ribbon.side-dock-ribbon  .titlebar-button {
   position: relative;
 }
-body.mod-windows .titlebar .titlebar-button.mod-minimize > svg, body.mod-windows .titlebar .titlebar-button.mod-maximize > svg, body.mod-windows .titlebar .titlebar-button.mod-close > svg {
+body.mod-windows > .titlebar  .titlebar-button.mod-minimize > svg, body.mod-windows .workspace > .workspace-ribbon.side-dock-ribbon  .titlebar-button.mod-minimize > svg, body.mod-windows > .titlebar  .titlebar-button.mod-maximize > svg, body.mod-windows .workspace > .workspace-ribbon.side-dock-ribbon  .titlebar-button.mod-maximize > svg, body.mod-windows > .titlebar  .titlebar-button.mod-close > svg, body.mod-windows .workspace > .workspace-ribbon.side-dock-ribbon  .titlebar-button.mod-close > svg {
   visibility: hidden;
   width: 10px;
   height: 10px;
 }
-body.mod-windows .titlebar .titlebar-button.mod-minimize::before, body.mod-windows .titlebar .titlebar-button.mod-minimize::after, body.mod-windows .titlebar .titlebar-button.mod-maximize::before, body.mod-windows .titlebar .titlebar-button.mod-maximize::after, body.mod-windows .titlebar .titlebar-button.mod-close::before, body.mod-windows .titlebar .titlebar-button.mod-close::after {
+body.mod-windows > .titlebar  .titlebar-button.mod-minimize::before, body.mod-windows .workspace > .workspace-ribbon.side-dock-ribbon  .titlebar-button.mod-minimize::before, body.mod-windows > .titlebar  .titlebar-button.mod-minimize::after, body.mod-windows .workspace > .workspace-ribbon.side-dock-ribbon  .titlebar-button.mod-minimize::after, body.mod-windows > .titlebar  .titlebar-button.mod-maximize::before, body.mod-windows .workspace > .workspace-ribbon.side-dock-ribbon  .titlebar-button.mod-maximize::before, body.mod-windows > .titlebar  .titlebar-button.mod-maximize::after, body.mod-windows .workspace > .workspace-ribbon.side-dock-ribbon  .titlebar-button.mod-maximize::after, body.mod-windows > .titlebar  .titlebar-button.mod-close::before, body.mod-windows .workspace > .workspace-ribbon.side-dock-ribbon  .titlebar-button.mod-close::before, body.mod-windows > .titlebar  .titlebar-button.mod-close::after, body.mod-windows .workspace > .workspace-ribbon.side-dock-ribbon  .titlebar-button.mod-close::after {
   display: block;
   content: "";
   position: absolute;
@@ -151,87 +40,38 @@ body.mod-windows .titlebar .titlebar-button.mod-minimize::before, body.mod-windo
   height: 10px;
   background: currentColor;
 }
-body.mod-windows .titlebar .titlebar-button.mod-minimize::after, body.mod-windows .titlebar .titlebar-button.mod-maximize::after, body.mod-windows .titlebar .titlebar-button.mod-close::after {
+body.mod-windows > .titlebar  .titlebar-button.mod-minimize::after, body.mod-windows .workspace > .workspace-ribbon.side-dock-ribbon  .titlebar-button.mod-minimize::after, body.mod-windows > .titlebar  .titlebar-button.mod-maximize::after, body.mod-windows .workspace > .workspace-ribbon.side-dock-ribbon  .titlebar-button.mod-maximize::after, body.mod-windows > .titlebar  .titlebar-button.mod-close::after, body.mod-windows .workspace > .workspace-ribbon.side-dock-ribbon  .titlebar-button.mod-close::after {
   display: none;
 }
 
-body.mod-windows .titlebar .mod-minimize::before {
+body.mod-windows.mod-windows > .titlebar  .mod-minimize::before , body.mod-windows.mod-windows .workspace > .workspace-ribbon.side-dock-ribbon  .mod-minimize::before  {
   clip-path: polygon(0 5px, 0 6px, 10px 6px, 10px 5px);
 }
 
-body.mod-windows:not(.is-maximized) .titlebar .mod-maximize::before {
+body:not(.is-maximized).mod-windows > .titlebar   .mod-maximize::before, body:not(.is-maximized).mod-windows .workspace > .workspace-ribbon.side-dock-ribbon   .mod-maximize::before {
   clip-path: polygon(0 0, 0 10px, 10px 10px, 10px 0, 0 0, 1px 1px, 9px 1px, 9px 9px, 1px 9px, 1px 1px);
 }
 
-body.mod-windows.is-maximized .titlebar .mod-maximize::before {
+body.is-maximized.mod-windows > .titlebar   .mod-maximize::before, body.is-maximized.mod-windows .workspace > .workspace-ribbon.side-dock-ribbon   .mod-maximize::before {
   clip-path: polygon(0 2px, 0 10px, 8px 10px, 8px 2px, 0 2px, 1px 3px, 7px 3px, 7px 9px, 1px 9px, 1px 3px);
 }
-body.mod-windows.is-maximized .titlebar .mod-maximize::after {
+body.is-maximized.mod-windows > .titlebar   .mod-maximize::after, body.is-maximized.mod-windows .workspace > .workspace-ribbon.side-dock-ribbon   .mod-maximize::after {
   display: block;
   clip-path: polygon(2px 3px, 2px 0, 10px 0, 10px 8px, 7px 8px, 7px 8px, 9px 7px, 9px 1px, 3px 1px, 3px 3px);
 }
 
-body.mod-windows .titlebar .mod-close::before {
+body.mod-windows > .titlebar  .mod-close::before, body.mod-windows .workspace > .workspace-ribbon.side-dock-ribbon  .mod-close::before {
   clip-path: polygon(5px 4.5px, 0.5px 0, 0 0.5px, 4.5px 5px, 0 9.5px, 0.5px 10px, 5px 5.5px, 9.5px 10px, 10px 9.5px, 5.5px 5px, 10px 0.5px, 9.5px 0);
 }
 
-.app-container > * > .workspace .workspace-ribbon.side-dock-ribbon.mod-left {
-  margin-top: calc(var(--header-height) - 1px);
-}
-.app-container > * > .workspace .workspace-ribbon.side-dock-ribbon.mod-left::before {
-  border-bottom: none;
+body .workspace > .mod-root {
+  background: transparent;
 }
 
-body.show-view-header .app-container > * > .workspace .workspace-split.mod-root > .workspace-tabs > .workspace-tab-container > .workspace-leaf > .workspace-leaf-content > .view-header,
-body.show-view-header .app-container > * > .workspace .workspace-split:not(.mod-root) .workspace-tab-container > .workspace-leaf > .workspace-leaf-content > .view-header,
-body.show-view-header .app-container > * > .workspace .workspace-split:not(.mod-root) .workspace-tab-container > .workspace-leaf > .workspace-leaf-content > .nav-header {
-  min-height: var(--fluent-nav-height);
-  height: var(--fluent-nav-height);
-  border-bottom: var(--divider-color) 1px solid;
-  will-change: background-color;
-  transition: background-color 0.4s ease;
-  background: var(--fluent-frame-secondary);
-}
-body.is-focused body.show-view-header .app-container > * > .workspace .workspace-split.mod-root > .workspace-tabs > .workspace-tab-container > .workspace-leaf > .workspace-leaf-content > .view-header,
-body.is-focused body.show-view-header .app-container > * > .workspace .workspace-split:not(.mod-root) .workspace-tab-container > .workspace-leaf > .workspace-leaf-content > .view-header,
-body.is-focused body.show-view-header .app-container > * > .workspace .workspace-split:not(.mod-root) .workspace-tab-container > .workspace-leaf > .workspace-leaf-content > .nav-header {
-  background: var(--fluent-frame-secondary-focused);
-}
-body.show-view-header .app-container > * > .workspace .workspace-split.mod-root > .workspace-tabs > .workspace-tab-container > .workspace-leaf > .workspace-leaf-content > .view-header > .view-header-title-container::after {
-  display: none;
-}
-body.show-view-header .app-container > * > .workspace .workspace-split:not(.mod-root) .workspace-tab-container > .workspace-leaf > .workspace-leaf-content > .view-header {
-  display: block !important;
-}
-body.show-view-header .app-container > * > .workspace .workspace-split:not(.mod-root) .workspace-tab-container > .workspace-leaf > .workspace-leaf-content > .view-header > * {
-  display: none;
-}
-body.show-view-header .app-container > * > .workspace .workspace-split.mod-root > .workspace-tabs > .workspace-tab-header-container > .workspace-tab-header-container-inner {
-  --tab-background-active: var(--fluent-frame-secondary);
-}
-body.show-view-header .app-container > * > .workspace .workspace-split.mod-root > .workspace-tabs > .workspace-tab-header-container > .workspace-tab-header-container-inner > .workspace-tab-header:not(:hover).is-active {
-  will-change: background-color;
-  transition: background-color 0.4s ease;
-}
-body.show-view-header .app-container > * > .workspace .workspace-split.mod-root > .workspace-tabs > .workspace-tab-header-container > .workspace-tab-header-container-inner > .workspace-tab-header:not(:hover).is-active::before, body.show-view-header .app-container > * > .workspace .workspace-split.mod-root > .workspace-tabs > .workspace-tab-header-container > .workspace-tab-header-container-inner > .workspace-tab-header:not(:hover).is-active::after {
-  will-change: box-shadow;
-  transition: box-shadow 0.4s ease;
-}
-body.is-focused body.show-view-header .app-container > * > .workspace .workspace-split.mod-root > .workspace-tabs > .workspace-tab-header-container > .workspace-tab-header-container-inner {
-  --tab-background-active: var(--fluent-frame-secondary-focused);
-}
-
-body.is-hidden-frameless .app-container > * > .workspace .workspace-split > .workspace-leaf-resize-handle,
-body.is-hidden-frameless .app-container > * > .workspace .workspace-split.mod-root > .workspace-tabs > .workspace-leaf-resize-handle {
-  clip-path: inset(calc(var(--header-height) + var(--fluent-nav-height, 0px)) 0 0 0);
-}
-
-.app-container > * > .workspace .mod-top-left-space .workspace-tab-header.is-active > .workspace-tab-header-inner,
-.app-container > * > .workspace .mod-top-right-space .workspace-tab-header.is-active > .workspace-tab-header-inner {
+body .workspace > .workspace-split:not(.mod-root) .workspace-tab-header.is-active > .workspace-tab-header-inner {
   position: relative;
 }
-.app-container > * > .workspace .mod-top-left-space .workspace-tab-header.is-active > .workspace-tab-header-inner::before,
-.app-container > * > .workspace .mod-top-right-space .workspace-tab-header.is-active > .workspace-tab-header-inner::before {
+body .workspace > .workspace-split:not(.mod-root) .workspace-tab-header.is-active > .workspace-tab-header-inner::before {
   content: "";
   display: block;
   position: absolute;
@@ -246,179 +86,12 @@ body.is-hidden-frameless .app-container > * > .workspace .workspace-split.mod-ro
   background-color: hsl(var(--color-accent-hsl));
 }
 
-body > .tooltip {
-  --background-modifier-message: var(--fluent-tooltip-border);
-  background: var(--fluent-tooltip-background);
-  border: var(--fluent-tooltip-border) 1px solid;
-  color: var(--fluent-tooltip-text);
-  backdrop-filter: blur(var(--fluent-backdrop-blur));
+body.is-focused > .titlebar  .titlebar-button, body.is-focused .workspace > .workspace-ribbon.side-dock-ribbon  .titlebar-button {
+  color: var(--titlebar-text-color);
 }
 
-body > .menu {
-  background: var(--fluent-menu-background);
-  border-color: var(--fluent-menu-border);
-  color: var(--fluent-menu-text);
-  backdrop-filter: blur(var(--fluent-backdrop-blur));
+body.mod-windows.is-focused > .titlebar   .titlebar-button, body.mod-windows.is-focused .workspace > .workspace-ribbon.side-dock-ribbon   .titlebar-button {
+  --titlebar-text-color: var(--titlebar-text-color-focused);
+  --background-modifier-hover: var(--fluent-frame-button-background-hover-focused);
 }
-
-body {
-  --fluent-backdrop-blur: 20px;
-  --icon-opacity-hover: var(--icon-opacity);
-}
-body.show-view-header {
-  --fluent-nav-height: 42px;
-}
-
-body.theme-light {
-  --fluent-focus-accent: 217.8823529412deg;
-  --titlebar-background: hsl(var(--fluent-focus-accent), 0%, 95.294%);
-  --titlebar-background-focused: hsl(var(--fluent-focus-accent), 41.5%, 87.3%);
-  --ribbon-background: hsl(var(--fluent-focus-accent), 0%, 95.294%);
-  --ribbon-background-focused: hsl(var(--fluent-focus-accent), 41.5%, 87.3%);
-  --ribbon-background-collapsed: hsl(var(--fluent-focus-accent), 0%, 95.294%);
-  --ribbon-background-collapsed-focused: hsl(var(--fluent-focus-accent), 41.5%, 87.3%);
-  --tab-outline-color: hsl(var(--fluent-focus-accent), 0%, 85.5%);
-  --tab-outline-color-focused: hsl(var(--fluent-focus-accent), 27.5%, 82.2%);
-  --fluent-frame-secondary: hsl(var(--fluent-focus-accent), 0%, 97.25%);
-  --fluent-frame-secondary-focused: hsl(var(--fluent-focus-accent), 26.84%, 96.27%);
-  --fluent-frame-button-text: #929292;
-  --fluent-frame-button-text-hover: ;
-  --fluent-frame-close-text-hover: #ffffff;
-  --fluent-frame-close-background-hover: #c42b1c;
-  --fluent-frame-button-background-hover: rgba(0, 0, 0, 0.0823529412);
-  --fluent-frame-button-background-hover-focused: hsla(
-  	var(--fluent-focus-accent),
-  	95%,
-  	35%,
-  	0.0823529412
-  );
-  --background-secondary: #ffffff;
-  --background-modifier-hover: rgba(0, 0, 0, 0.0509803922);
-  --icon-color: #191919;
-  --icon-color-focused: #191919;
-  --icon-color-hover: #191919;
-  --fluent-tooltip-background: #000;
-  --fluent-tooltip-border: #000;
-  --fluent-tooltip-text: #fff;
-  --fluent-menu-background: rgba(247, 247, 247, 0.7);
-  --fluent-menu-border: #eaeaea;
-  --fluent-menu-text: #000;
-  --tab-text-color: #555555;
-  --tab-text-color-focused: #555555;
-}
-body.theme-light.is-translucent.is-frameless {
-  --titlebar-background: hsl(0deg, 0%, 87.3%);
-  --titlebar-background-focused: hsla(0deg, 0%, 87.3%, 70%);
-}
-body.theme-light:not(.is-frameless) {
-  --titlebar-background-focused: hsl(var(--fluent-focus-accent), 42.85%, 95.294%);
-}
-body.theme-light.is-translucent.is-frameless {
-  --ribbon-background: hsl(0deg, 0%, 87.3%);
-  --ribbon-background-focused: hsla(0deg, 0%, 87.3%, 70%);
-}
-body.theme-light:not(.is-frameless) {
-  --ribbon-background-focused: hsl(var(--fluent-focus-accent), 42.85%, 95.294%);
-}
-body.theme-light.is-translucent.is-frameless {
-  --ribbon-background-collapsed: hsl(0deg, 0%, 87.3%);
-  --ribbon-background-collapsed-focused: hsla(0deg, 0%, 87.3%, 70%);
-}
-body.theme-light:not(.is-frameless) {
-  --ribbon-background-collapsed-focused: hsl(var(--fluent-focus-accent), 42.85%, 95.294%);
-}
-body.theme-light.is-translucent.is-frameless {
-  --tab-outline-color: hsl(0deg, 0%, 82.2%);
-  --tab-outline-color-focused: hsla(0deg, 0%, 82.2%, 70%);
-}
-body.theme-light:not(.is-frameless) {
-  --tab-outline-color-focused: hsl(var(--fluent-focus-accent), 0%, 85.5%);
-}
-body.theme-light.is-translucent:not(.is-frameless) {
-  --titlebar-background: #ffffff;
-  --titlebar-background-focused: #ffffff;
-}
-body.theme-light:not(.is-frameless) {
-  --fluent-frame-secondary-focused: hsl(var(--fluent-focus-accent), 0%, 97.25%);
-}
-body.theme-light.is-translucent {
-  --fluent-frame-button-background-hover-focused: rgba(0, 0, 0, 0.0823529412);
-}
-
-body.theme-dark {
-  --fluent-focus-accent: 217.8823529412deg;
-  --titlebar-background: hsl(var(--fluent-focus-accent), 0%, 13.72%);
-  --titlebar-background-focused: hsl(var(--fluent-focus-accent), 100%, 6.27%);
-  --ribbon-background: hsl(var(--fluent-focus-accent), 0%, 13.72%);
-  --ribbon-background-focused: hsl(var(--fluent-focus-accent), 100%, 6.27%);
-  --ribbon-background-collapsed: hsl(var(--fluent-focus-accent), 0%, 13.72%);
-  --ribbon-background-collapsed-focused: hsl(var(--fluent-focus-accent), 100%, 6.27%);
-  --tab-outline-color: hsl(var(--fluent-focus-accent), 0%, 11.37%);
-  --tab-outline-color-focused: hsl(var(--fluent-focus-accent), 100%, 6.08%);
-  --fluent-frame-secondary: hsl(var(--fluent-focus-accent), 0%, 17.25%);
-  --fluent-frame-secondary-focused: hsl(var(--fluent-focus-accent), 10.71%, 15.73%);
-  --fluent-frame-button-text: #929292;
-  --fluent-frame-button-text-hover: ;
-  --fluent-frame-close-text-hover: #ffffff;
-  --fluent-frame-close-background-hover: #c42b1c;
-  --fluent-frame-button-background-hover: rgba(255, 255, 255, 0.0823529412);
-  --fluent-frame-button-background-hover-focused: hsla(
-  	var(--fluent-focus-accent),
-  	95%,
-  	35%,
-  	0.0823529412
-  );
-  --background-secondary: #1e1e1e;
-  --background-modifier-hover: rgba(255, 255, 255, 0.0509803922);
-  --icon-color: #e8eaed;
-  --icon-color-focused: #e8eaed;
-  --icon-color-hover: #e8eaed;
-  --fluent-tooltip-background: #171717;
-  --fluent-tooltip-border: #171717;
-  --fluent-tooltip-text: #dcdcdc;
-  --fluent-menu-background: rgba(42, 42, 42, 0.7);
-  --fluent-menu-border: #3c3c3c;
-  --fluent-menu-text: #e2e2e2;
-  --tab-text-color: #cccccc;
-  --tab-text-color-focused: #cccccc;
-}
-body.theme-dark.is-translucent.is-frameless {
-  --titlebar-background: hsl(0deg, 0%, 6.27%);
-  --titlebar-background-focused: hsla(0deg, 0%, 6.27%, 70%);
-}
-body.theme-dark:not(.is-frameless) {
-  --titlebar-background-focused: hsl(var(--fluent-focus-accent), 42.85%, 13.72%);
-}
-body.theme-dark.is-translucent.is-frameless {
-  --ribbon-background: hsl(0deg, 0%, 6.27%);
-  --ribbon-background-focused: hsla(0deg, 0%, 6.27%, 70%);
-}
-body.theme-dark:not(.is-frameless) {
-  --ribbon-background-focused: hsl(var(--fluent-focus-accent), 42.85%, 13.72%);
-}
-body.theme-dark.is-translucent.is-frameless {
-  --ribbon-background-collapsed: hsl(0deg, 0%, 6.27%);
-  --ribbon-background-collapsed-focused: hsla(0deg, 0%, 6.27%, 70%);
-}
-body.theme-dark:not(.is-frameless) {
-  --ribbon-background-collapsed-focused: hsl(var(--fluent-focus-accent), 42.85%, 13.72%);
-}
-body.theme-dark.is-translucent.is-frameless {
-  --tab-outline-color: hsl(0deg, 0%, 6.08%);
-  --tab-outline-color-focused: hsla(0deg, 0%, 6.08%, 70%);
-}
-body.theme-dark:not(.is-frameless) {
-  --tab-outline-color-focused: hsl(var(--fluent-focus-accent), 0%, 11.37%);
-}
-body.theme-dark.is-translucent:not(.is-frameless) {
-  --titlebar-background: #202020;
-  --titlebar-background-focused: #202020;
-}
-body.theme-dark:not(.is-frameless) {
-  --fluent-frame-secondary-focused: hsl(var(--fluent-focus-accent), 0%, 17.25%);
-}
-body.theme-dark.is-translucent {
-  --fluent-frame-button-background-hover-focused: rgba(255, 255, 255, 0.0823529412);
-}
-
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22src/core/misc.scss%22,%22src/core/focus-colors.scss%22,%22src/core/frame-decoration-colors.scss%22,%22src/core/mid-header-rebox.scss%22,%22src/fixes/fullscreen-titlebar-color.scss%22,%22src/fixes/fullscreen-titlebar-padding.scss%22,%22src/tweaks/better-transluence.scss%22,%22src/tweaks/focus-colors-transition.scss%22,%22src/_animations.scss%22,%22src/tweaks/frame-decoration-win11.scss%22,%22src/tweaks/weld-side-dock-and-title.scss%22,%22src/tweaks/weld-nav-headers-and-title.scss%22,%22src/tweaks/resize-drag-handles.scss%22,%22src/tweaks/tab-header-active.scss%22,%22src/tweaks/style-tooltip.scss%22,%22src/tweaks/style-menu.scss%22,%22src/fluent.scss%22,%22src/_utils.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAGE;EACE;;AAIA;EACE;;;AAUL;EACC;;;ACdF;EACC;;;AAGD;EACC;EACA;;;AAGD;EACC;;;AAKA;EACC;EACA;EACA;;;AChBF;EACC;EACA;EACA;;;AAMA;EAEC;EACA;;;AASF;EACC;;;ACtBD;EACI;EACA;;;ACLJ;EACC;;AAEA;EACC;;;ACFF;EACC;;;ACDD;EACC;;;AAQA;EACC;;AAGD;EACC;;AAOD;EACC;;;AAbD;AAAA;EACC;;AAGD;AAAA;EACC;;AAkBD;EACC;;;AC9BD;ECTA;EACA;;ADcC;ECfD;EACA;;ADqBC;ECtBD;EACA;;AD4BC;AAAA;EC7BD;EACA;;;ADoCD;EChCC;EACA;;;ADqCA;EC3CA;EACA;;;ADiDA;EClDA;EACA;;;ACeA;EAGC;;;AAKD;EACC,QAdS;;AAiBV;EACC,QAjB2B;;;AAqB7B;EAGC;;;AAID;EACC;;AAKC;EACC;EACA,OAxCI;EAyCJ,QAzCI;;AA4CL;EAEC;EACA;EAEA;EACA;EACA,MAjDS;EAkDT,OApDI;EAqDJ,QArDI;EAsDJ;;AAGD;EACC;;;AAMH;EAIC;;;AAYA;EACC;;;AAkBD;EACC;;AAcD;EACC;EACA;;;AAgBF;EAGC;;;ACzIA;EACC;;AAEA;EACC;;;ACHF;AAAA;AAAA;EAIC;EACA;EAGA;EHfD;EACA;EGoBC;;AACA;AAAA;AAAA;EACC;;AAMF;EACC;;AAKD;EACC;;AACA;EACC;;AAKF;EAaC;;AAXA;EH7CD;EACA;;AGgDE;EACC;EACA;;AAMF;EACC;;;ACnDF;AAAA;EAGC;;;ACHD;AAAA;EAEC;;AAEA;AAAA;EACC;EACA;EACA;EACA;EAEA;EAEA,MAXS;EAYT,OAZS;EAaT;EACA;EACA;EACA;EAEA;;;ACrBH;EACC;EACA;EACA;EACA;EAEA;;;ACJD;EACC;EACA;EACA;EAEA;;;ACqFD;EACC;EACA;;AAEA;EACC;;;AAIF;EA7DC;ECxCA;EACA;EADA;EACA;EADA;EACA;EADA;EACA;EADA;EACA;EDuDA;EACA;EACA;EACA;EACA;EACA;AAAA;AAAA;AAAA;AAAA;AAAA;EAWA;EACA;EACA;EACA;EACA;EAEA;EACA;EACA;EAEA;EACA;EACA;EAIA;EACA;;ACrFA;EAEE;EACA;;AAKF;EACC;;AATD;EAEE;EACA;;AAKF;EACC;;AATD;EAEE;EACA;;AAKF;EACC;;AATD;EAEE;EACA;;AAKF;EACC;;ADkCD;EACC;EACA;;ACrCD;EACC;;ADsDD;EACC;;;AAqCF;EAjEC;ECxCA;EACA;EADA;EACA;EADA;EACA;EADA;EACA;EADA;EACA;EDuDA;EACA;EACA;EACA;EACA;EACA;AAAA;AAAA;AAAA;AAAA;AAAA;EAWA;EACA;EACA;EACA;EACA;EAEA;EACA;EACA;EAEA;EACA;EACA;EAIA;EACA;;ACrFA;EAEE;EACA;;AAKF;EACC;;AATD;EAEE;EACA;;AAKF;EACC;;AATD;EAEE;EACA;;AAKF;EACC;;AATD;EAEE;EACA;;AAKF;EACC;;ADkCD;EACC;EACA;;ACrCD;EACC;;ADsDD;EACC%22,%22file%22:%22theme.css%22,%22sourcesContent%22:%5B%22@import%20%5C%22../selectors%5C%22;%5Cn%5Cn%23%7B$select-workspace%7D%20.workspace-tab-header%20%7B%5Cn%20%20&.is-active%20%7B%5Cn%20%20%20%20font-weight:%20500;%5Cn%20%20%7D%5Cn%5Cn%20%20%3E%20.workspace-tab-header-inner%20%7B%5Cn%20%20%20%20%3E%20*%20%7B%5Cn%20%20%20%20%20%20font-size:%2012px;%5Cn%20%20%20%20%7D%5Cn%20%20%7D%5Cn%7D%5Cn%5Cn//%20---------------------------------------------------------------------------------------------------------------------%5Cn//%20Give%20the%20sidebars%20the%20background%20color.%5Cn//%20---------------------------------------------------------------------------------------------------------------------%5Cn%5Cn%23%7B$select-workspace%7D%20%7B%5Cn%5Ct%23%7B$select-workspace-sidebar-content%7D%20%7B%5Cn%5Ct%5Ctbackground:%20var(--background-secondary)%20!important;%5Cn%5Ct%7D%5Cn%7D%5Cn%22,%22@import%20%5C%22../selectors%5C%22;%5Cn%5Cn//%20---------------------------------------------------------------------------------------------------------------------%5Cn//%20Add%20support%20for%20changing%20more%20colors%20on%20focus%20gained/lost:%5Cn//%20---------------------------------------------------------------------------------------------------------------------%5Cn%5Cnbody.is-focused%20%7B%5Cn%5Ct--tab-outline-color:%20var(--tab-outline-color-focused)%20!important;%5Cn%7D%5Cn%5Cnbody.is-focused.mod-windows%20%23%7B$select-titlebar%7D%20.titlebar-button%20%7B%5Cn%5Ct--titlebar-text-color:%20var(--titlebar-text-color-focused);%5Cn%5Ct--background-modifier-hover:%20var(--fluent-frame-button-background-hover-focused);%5Cn%7D%5Cn%5Cnbody%20%23%7B$select-titlebar%7D%20.titlebar-button%20%7B%5Cn%5Ctcolor:%20var(--titlebar-text-color);%5Cn%7D%5Cn%5Cn//%20Dock%20ribbon%20should%20use%20the%20focus%20colors%20for%20the%20title.%5Cnbody.is-focused%20%23%7B$select-workspace%7D%20%7B%5Cn%5Ct%23%7B$select-workspace-side-dock%7D%20%7B%5Cn%5Ct%5Ct--ribbon-background:%20var(--ribbon-background-focused);%5Cn%5Ct%5Ct--ribbon-background-collapsed:%20var(--ribbon-background-collapsed-focused);%5Cn%5Ct%5Ctborder-right-color:%20var(--tab-outline-color-focused);%5Cn%5Ct%7D%5Cn%7D%5Cn%22,%22@import%20%5C%22../selectors%5C%22;%5Cn%5Cn//%20---------------------------------------------------------------------------------------------------------------------%5Cn//%20Change%20frame%20decoration%20button%20hover%20colors.%5Cn//%20---------------------------------------------------------------------------------------------------------------------%5Cn%5Cn//%20Minimize/maximize%20buttons.%5Cn//%20Uses%20a%20different%20color%20scheme%20than%20other%20title%20elements.%5Cn%23%7B$select-titlebar%7D%20.titlebar-button%20%7B%5Cn%5Ct--titlebar-text-color:%20var(--fluent-frame-button-text);%5Cn%5Ct--titlebar-text-color-focused:%20var(--fluent-frame-button-text-focused);%5Cn%5Ct--background-modifier-hover:%20var(--fluent-frame-button-background-hover);%5Cn%7D%5Cn%5Cn//%20Close%20button.%5Cn//%20Windows%2011%20uses%20a%20darker%20red%20than%20the%20default%20provided%20by%20Obsidian.%5Cnbody.mod-windows%20%23%7B$select-titlebar%7D%20.titlebar-button.mod-close%20%7B%5Cn%5Ct&:hover,%5Cn%5Ct&:focus%20%7B%5Cn%5Ct%5Ct--background-modifier-error:%20var(--fluent-frame-close-background-hover);%5Cn%5Ct%5Ctcolor:%20var(--fluent-frame-close-text-hover)%20!important;%5Cn%5Ct%7D%5Cn%7D%5Cn%5Cn//%20---------------------------------------------------------------------------------------------------------------------%5Cn//%20Allow%20tab%20headers%20to%20adopt%20background%20color%20of%20frame.%5Cn//%20This%20fits%20more%20in%20line%20with%20Explorer%20and%20Windows%20Terminal.%5Cn//%20---------------------------------------------------------------------------------------------------------------------%5Cn%5Cn%23%7B$select-workspace%7D%20%3E%20.mod-root%20%7B%5Cn%5Ctbackground:%20transparent;%5Cn%7D%5Cn%22,%22@import%20%5C%22../selectors%5C%22;%5Cn%5Cn//%20---------------------------------------------------------------------------------------------------------------------%5Cn//%20Change%20the%20box%20of%20the%20view%20header.%5Cn//%5Cn//%20This%20changes%20it%20from%20margins%20to%20padding,%20which%20allows%20the%20background%20to%20fill%20the%20full%20width%20of%20the%20center%20section.%5Cn//%20---------------------------------------------------------------------------------------------------------------------%5Cn%5Cn.view-header%20%7B%5Cn%20%20%20%20padding:%200%20var(--size-4-3);%5Cn%20%20%20%20margin:%200;%5Cn%7D%5Cn%22,%22//%20---------------------------------------------------------------------------------------------------------------------%5Cn//%20When%20using%20the%20Obsidian%20frame%20and%20in%20fullscreen%20mode,%20the%20blank%20space%20where%20the%20titlebar%20used%20to%20be%20will%20use%20the%5Cn//%20body%20color.%20This%20fixes%20that%20by%20changing%20it%20to%20use%20the%20titlebar%20color.%5Cn//%20---------------------------------------------------------------------------------------------------------------------%5Cn%5Cnbody.is-fullscreen%20%7B%5Cn%5Ctbackground-color:%20var(--titlebar-background);%5Cn%5Cn%5Ct&.is-focused%20%7B%5Cn%5Ct%5Ctbackground-color:%20var(--titlebar-background-focused);%5Cn%5Ct%7D%5Cn%7D%5Cn%22,%22@import%20%5C%22../selectors%5C%22;%5Cn%5Cn//%20---------------------------------------------------------------------------------------------------------------------%5Cn//%20When%20using%20the%20Obsidian%20frame%20and%20in%20fullscreen%20mode,%20there%20is%20a%20lot%20of%20extra%20padding.%5Cn//%20This%20removes%20that%20padding.%5Cn//%20---------------------------------------------------------------------------------------------------------------------%5Cn%5Cnbody.is-fullscreen.is-frameless:not(.is-hidden-frameless)%20%7B%5Cn%5Ctpadding-top:%200;%5Cn%7D%5Cn%22,%22@import%20%5C%22../selectors%5C%22;%5Cn%5Cn//%20---------------------------------------------------------------------------------------------------------------------%5Cn//%20Disable%20default%20translucent%20background.%5Cn//%20Allows%20for%20more%20fine-grained%20control.%5Cn//%20---------------------------------------------------------------------------------------------------------------------%5Cn%5Cnbody%20%7B%5Cn%5Ct--workspace-background-translucent:%20transparent;%5Cn%7D%5Cn%5Cn//%20---------------------------------------------------------------------------------------------------------------------%5Cn//%20Add%20transparent%20background%20to%20header-like%20elements.%5Cn//%20---------------------------------------------------------------------------------------------------------------------%5Cn%5Cn@mixin%20enable-translucent-background($conditions:%20%5C%22%5C%22)%20%7B%5Cn%5Ctbody.is-translucent:not(.is-fullscreen)%23%7B$conditions%7D%20&%20%7B%5Cn%5Ct%5Ctbackground-color:%20var(--titlebar-background)%20!important;%5Cn%5Ct%7D%5Cn%5Cn%5Ctbody.is-translucent:not(.is-fullscreen).is-focused%23%7B$conditions%7D%20&%20%7B%5Cn%5Ct%5Ctbackground-color:%20var(--titlebar-background-focused,%20var(--workspace-background-translucent))%20!important;%5Cn%5Ct%7D%5Cn%7D%5Cn%5Cn%23%7B$select-titlebar%7D%20%7B%5Cn%5Ct@include%20enable-translucent-background(%5C%22:not(.is-hidden-frameless)%5C%22);%5Cn%5Cn%5Ctbody.is-hidden-frameless%20&%20.titlebar-button-container%20%7B%5Cn%5Ct%5Ctbackground-color:%20transparent%20!important;%5Cn%5Ct%7D%5Cn%7D%5Cn%5Cn%23%7B$select-workspace%7D%20%7B%5Cn%5Ct%23%7B$select-workspace-headers%7D,%5Cn%5Ct%23%7B$select-workspace-side-dock%7D%20%7B%5Cn%5Ct%5Ct@include%20enable-translucent-background;%5Cn%5Ct%7D%5Cn%5Cn%5Ct%23%7B$select-workspace-side-dock%7D%20%7B%5Cn%5Ct%5Ctborder-right-color:%20var(--tab-outline-color);%5Cn%5Ct%7D%5Cn%7D%5Cn%22,%22@import%20%5C%22../selectors%5C%22;%5Cn@import%20%5C%22../animations%5C%22;%5Cn%5Cn//%20---------------------------------------------------------------------------------------------------------------------%5Cn//%20Add%20color%20transitions%20when%20changing%20colours%20on%20focus%20gained/lost:%5Cn//%20---------------------------------------------------------------------------------------------------------------------%5Cn%5Cn%5Cnbody.is-frameless%20%7B%5Cn%5Ct//%20Window%20controls.%5Cn%5Ct%23%7B$select-titlebar%7D%20.titlebar-inner%20%3E%20.titlebar-button-container%20%7B%5Cn%5Ct%5Ct@include%20transition-frame-background;%5Cn%5Ct%7D%5Cn%5Cn%5Ct//%20Workspace%20headers.%5Cn%5Ct%23%7B$select-workspace%7D%20%7B%5Cn%5Ct%5Ct%23%7B$select-workspace-headers%7D%20%7B%5Cn%5Ct%5Ct%5Ct@include%20transition-frame-background;%5Cn%5Ct%5Ct%7D%5Cn%5Ct%7D%5Cn%5Cn%5Ct//%20Workspace%20dock%20ribbon.%5Cn%5Ct%23%7B$select-workspace%7D%20%7B%5Cn%5Ct%5Ct%23%7B$select-workspace-side-dock%7D%20%7B%5Cn%5Ct%5Ct%5Ct@include%20transition-frame-background;%5Cn%5Ct%5Ct%7D%5Cn%5Ct%7D%5Cn%5Cn%5Ct//%20Titlebar%20in%20Obsidian%20frame.%5Cn%5Ct&:not(.is-hidden-frameless)%20%7B%5Cn%5Ct%5Ct&,%5Cn%5Ct%5Ct%23%7B$select-titlebar%7D%20%7B%5Cn%5Ct%5Ct%5Ct@include%20transition-frame-background;%5Cn%5Ct%5Ct%7D%5Cn%5Ct%7D%5Cn%7D%5Cn%5Cn//%20The%20title%20bar%20frame%20decoration%20buttons.%5Cn%23%7B$select-titlebar%7D%20.titlebar-button-container%20.titlebar-button%20%7B%5Cn%5Ct@include%20transition-button-background;%5Cn%7D%5Cn%5Cn//%20Workspace%20sidebars.%5Cn%23%7B$select-workspace%7D%20%7B%5Cn%5Ct%23%7B$select-workspace-sidebar-content%7D%20%7B%5Cn%5Ct%5Ct@include%20transition-frame-background;%5Cn%5Ct%7D%5Cn%7D%5Cn%5Cn//%20Workspace%20sidebars.%5Cn%23%7B$select-workspace%7D%20%7B%5Cn%5Ct%23%7B$select-workspace-sidebar-content%7D%20%7B%5Cn%5Ct%5Ct@include%20transition-frame-background;%5Cn%5Ct%7D%5Cn%7D%5Cn%22,%22@mixin%20transition-frame-background()%20%7B%5Cn%5Ctwill-change:%20background-color;%5Cn%5Cttransition:%20background-color%20$animation-speed-window-focus%20ease;%5Cn%7D%5Cn%5Cn@mixin%20transition-button-background()%20%7B%5Cn%5Ctwill-change:%20background-color;%5Cn%5Cttransition:%20background-color%20$animation-speed-button-focus%20ease;%5Cn%7D%5Cn%22,%22@use%20%5C%22sass:math%5C%22;%5Cn%5Cn@import%20%5C%22../selectors%5C%22;%5Cn%5Cn//%20-----------------------------------------------------------------------------%5Cn//%20Change%20the%20window%20frame%20decorations%20(minimize,%20maximize,%20close%20buttons)%20to%5Cn//%20look%20more%20like%20Windows%2011.%5Cn//%20-----------------------------------------------------------------------------%5Cn%5Cn$rect:%2010px;%5Cn$titlebar-margin:%204px;%5Cn$h-padding:%2018px;%5Cn$v-height:%2040px;%5Cn$v-height-in-obsidian-frame:%2028px;%5Cn%5Cn//%20Resize%20the%20titlebar%20buttons.%5Cnbody.mod-windows%20%23%7B$select-titlebar%7D%20.titlebar-button%20%7B%5Cn%5Ct&.mod-minimize,%5Cn%5Ct&.mod-maximize,%5Cn%5Ct&.mod-close%20%7B%5Cn%5Ct%5Ctpadding:%200%20$h-padding%20!important;%5Cn%5Ct%7D%5Cn%7D%5Cn%5Cn%23%7B$select-titlebar%7D%20.titlebar-button%20%7B%5Cn%5Ctbody.mod-windows.is-hidden-frameless%20&%20%7B%5Cn%5Ct%5Ctheight:%20$v-height;%5Cn%5Ct%7D%5Cn%5Cn%5Ctbody.mod-windows.is-hidden:not(.is-hidden-frameless)%20&%20%7B%5Cn%5Ct%5Ctheight:%20$v-height-in-obsidian-frame;%5Cn%5Ct%7D%5Cn%7D%5Cn%5Cnbody.mod-windows%20%7B%5Cn%5Ct$original-right-space:%20126px;%5Cn%5Ct$updated-right-space:%20$original-right-space%20-%20(3%20*%2014px)%20+%20(3%20*%20$h-padding);%5Cn%5Ct--frame-right-space:%20%23%7B$updated-right-space%20+%20$titlebar-margin%7D%20!important;%5Cn%7D%5Cn%5Cn//%20Change%20the%20icons.%5Cnbody.mod-windows%20%23%7B$select-titlebar%7D%20.titlebar-button%20%7B%5Cn%5Ctposition:%20relative;%5Cn%5Cn%5Ct&.mod-minimize,%5Cn%5Ct&.mod-maximize,%5Cn%5Ct&.mod-close%20%7B%5Cn%5Ct%5Ct&%20%3E%20svg%20%7B%5Cn%5Ct%5Ct%5Ctvisibility:%20hidden;%5Cn%5Ct%5Ct%5Ctwidth:%20$rect;%5Cn%5Ct%5Ct%5Ctheight:%20$rect;%5Cn%5Ct%5Ct%7D%5Cn%5Cn%5Ct%5Ct&::before,%5Cn%5Ct%5Ct&::after%20%7B%5Cn%5Ct%5Ct%5Ctdisplay:%20block;%5Cn%5Ct%5Ct%5Ctcontent:%20%5C%22%5C%22;%5Cn%5Cn%5Ct%5Ct%5Ctposition:%20absolute;%5Cn%5Ct%5Ct%5Cttop:%20calc(100%25%20/%202%20-%20math.div($rect,%202));%5Cn%5Ct%5Ct%5Ctleft:%20$h-padding;%5Cn%5Ct%5Ct%5Ctwidth:%20$rect;%5Cn%5Ct%5Ct%5Ctheight:%20$rect;%5Cn%5Ct%5Ct%5Ctbackground:%20currentColor;%5Cn%5Ct%5Ct%7D%5Cn%5Cn%5Ct%5Ct&::after%20%7B%5Cn%5Ct%5Ct%5Ctdisplay:%20none;%5Cn%5Ct%5Ct%7D%5Cn%5Ct%7D%5Cn%7D%5Cn%5Cn//%20Minimize%20button.%5Cnbody.mod-windows%20%23%7B$select-titlebar%7D%20.mod-minimize::before%20%7B%5Cn%5Ct$stroke:%201px;%5Cn%5Ct$offs:%205.5px;%5Cn%5Cn%5Ctclip-path:%20polygon(%5Cn%5Ct%5Ct0%20($offs%20-%20math.div($stroke,%202)),%5Cn%5Ct%5Ct0%20($offs%20+%20math.div($stroke,%202)),%5Cn%5Ct%5Ct$rect%20($offs%20+%20math.div($stroke,%202)),%5Cn%5Ct%5Ct$rect%20($offs%20-%20math.div($stroke,%202))%5Cn%5Ct);%5Cn%7D%5Cn%5Cn//%20Maximize%20button.%5Cnbody.mod-windows:not(.is-maximized)%20%23%7B$select-titlebar%7D%20.mod-maximize%20%7B%5Cn%5Ct$stroke:%201px;%5Cn%5Cn%5Ct&::before%20%7B%5Cn%5Ct%5Ctclip-path:%20polygon(%5Cn%5Ct%5Ct%5Ct0%200,%5Cn%5Ct%5Ct%5Ct0%20$rect,%5Cn%5Ct%5Ct%5Ct$rect%20$rect,%5Cn%5Ct%5Ct%5Ct$rect%200,%5Cn%5Ct%5Ct%5Ct0%200,%5Cn%5Ct%5Ct%5Ct$stroke%20$stroke,%5Cn%5Ct%5Ct%5Ct($rect%20-%20$stroke)%20$stroke,%5Cn%5Ct%5Ct%5Ct($rect%20-%20$stroke)%20($rect%20-%20$stroke),%5Cn%5Ct%5Ct%5Ct$stroke%20($rect%20-%20$stroke),%5Cn%5Ct%5Ct%5Ct$stroke%20$stroke%5Cn%5Ct%5Ct);%5Cn%5Ct%7D%5Cn%7D%5Cn%5Cnbody.mod-windows.is-maximized%20%23%7B$select-titlebar%7D%20.mod-maximize%20%7B%5Cn%5Ct$stroke:%201px;%5Cn%5Cn%5Ct&::before%20%7B%5Cn%5Ct%5Ctclip-path:%20polygon(%5Cn%5Ct%5Ct%5Ct0%20(2px),%5Cn%5Ct%5Ct%5Ct0%20($rect),%5Cn%5Ct%5Ct%5Ct($rect%20-%202px)%20($rect),%5Cn%5Ct%5Ct%5Ct($rect%20-%202px)%20(2px),%5Cn%5Ct%5Ct%5Ct0%20(2px),%5Cn%5Ct%5Ct%5Ct$stroke%20(2px%20+%20$stroke),%5Cn%5Ct%5Ct%5Ct($rect%20-%20$stroke%20-%202px)%20(2px%20+%20$stroke),%5Cn%5Ct%5Ct%5Ct($rect%20-%20$stroke%20-%202px)%20($rect%20-%20$stroke),%5Cn%5Ct%5Ct%5Ct$stroke%20($rect%20-%20$stroke),%5Cn%5Ct%5Ct%5Ct$stroke%20(2px%20+%20$stroke)%5Cn%5Ct%5Ct);%5Cn%5Ct%7D%5Cn%5Cn%5Ct&::after%20%7B%5Cn%5Ct%5Ctdisplay:%20block;%5Cn%5Ct%5Ctclip-path:%20polygon(%5Cn%5Ct%5Ct%5Ct(2px)%203px,%5Cn%5Ct%5Ct%5Ct(2px)%200,%5Cn%5Ct%5Ct%5Ct$rect%200,%5Cn%5Ct%5Ct%5Ct$rect%20($rect%20-%202px),%5Cn%5Ct%5Ct%5Ct($rect%20-%203px)%20($rect%20-%202px),%5Cn%5Ct%5Ct%5Ct($rect%20-%203px)%20($rect%20-%202px),%5Cn%5Ct%5Ct%5Ct($rect%20-%20$stroke)%20($rect%20-%203px),%5Cn%5Ct%5Ct%5Ct($rect%20-%20$stroke)%20$stroke,%5Cn%5Ct%5Ct%5Ct(3px)%20$stroke,%5Cn%5Ct%5Ct%5Ct(3px)%203px%5Cn%5Ct%5Ct);%5Cn%5Ct%7D%5Cn%7D%5Cn%5Cn//%20Close%20button.%5Cnbody.mod-windows%20%23%7B$select-titlebar%7D%20.mod-close::before%20%7B%5Cn%5Ct$stroke:%201px;%5Cn%5Cn%5Ctclip-path:%20polygon(%5Cn%5Ct%5Ctmath.div($rect,%202)%20(math.div($rect,%202)%20-%20math.div($stroke,%202)),%5Cn%5Ct%5Ctmath.div($stroke,%202)%200,%5Cn%5Ct%5Ct0%20math.div($stroke,%202),%5Cn%5Ct%5Ct(math.div($rect,%202)%20-%20math.div($stroke,%202))%20math.div($rect,%202),%5Cn%5Ct%5Ct0%20($rect%20-%20math.div($stroke,%202)),%5Cn%5Ct%5Ctmath.div($stroke,%202)%20($rect),%5Cn%5Ct%5Ct(math.div($rect,%202))%20(math.div($rect,%202)%20+%20math.div($stroke,%202)),%5Cn%5Ct%5Ct($rect%20-%20math.div($stroke,%202))%20($rect),%5Cn%5Ct%5Ct($rect)%20($rect%20-%20math.div($stroke,%202)),%5Cn%5Ct%5Ct(math.div($rect,%202)%20+%20math.div($stroke,%202))%20math.div($rect,%202),%5Cn%5Ct%5Ct($rect)%20math.div($stroke,%202),%5Cn%5Ct%5Ct($rect%20-%20math.div($stroke,%202))%200%5Cn%5Ct);%5Cn%7D%5Cn%22,%22@import%20%5C%22../selectors%5C%22;%5Cn%5Cn//%20---------------------------------------------------------------------------------------------------------------------%5Cn//%20Remove%20the%20border%20separating%20the%20side%20dock%20from%20the%20title%20bar.%5Cn//%20---------------------------------------------------------------------------------------------------------------------%5Cn%5Cn%23%7B$select-workspace%7D%20%7B%5Cn%5Ct%23%7B$select-workspace-side-dock%7D%20%7B%5Cn%5Ct%5Ctmargin-top:%20calc(var(--header-height)%20-%201px);%5Cn%5Cn%5Ct%5Ct&::before%20%7B%5Cn%5Ct%5Ct%5Ctborder-bottom:%20none;%5Cn%5Ct%5Ct%7D%5Cn%5Ct%7D%5Cn%7D%5Cn%22,%22@import%20%5C%22../selectors%5C%22;%5Cn@import%20%5C%22../animations%5C%22;%5Cn%5Cn//%20---------------------------------------------------------------------------------------------------------------------%5Cn//%20Remove%20the%20border%20separating%20the%20side%20dock%20from%20the%20title%20bar.%5Cn//%20---------------------------------------------------------------------------------------------------------------------%5Cn%5Cnbody.show-view-header%20%23%7B$select-workspace%7D%20%7B%5Cn%5Ct%23%7B$select-workspace-main-content%7D%20%3E%20.workspace-leaf-content%20%3E%20.view-header,%5Cn%5Ct%23%7B$select-workspace-sidebar-content%7D%20%3E%20.workspace-leaf-content%20%3E%20.view-header,%5Cn%5Ct%23%7B$select-workspace-sidebar-content%7D%20%3E%20.workspace-leaf-content%20%3E%20.nav-header%20%7B%5Cn%5Ct%5Ct//%20Change%20the%20view/nav%20height%20to%20be%20a%20fixed%20size,%20and%20not%20depend%20on%20the%20viewport%20height.%5Cn%5Ct%5Ctmin-height:%20var(--fluent-nav-height);%5Cn%5Ct%5Ctheight:%20var(--fluent-nav-height);%5Cn%5Cn%5Ct%5Ct//%20Add%20a%20border%20to%20the%20bottom.%5Cn%5Ct%5Ctborder-bottom:%20var(--divider-color)%201px%20solid;%5Cn%5Cn%5Ct%5Ct//%20Use%20the%20fluent%20focus%20transition.%5Cn%5Ct%5Ct@include%20transition-frame-background;%5Cn%5Cn%5Ct%5Ct//%20Use%20the%20fluent%20focus%20colors.%5Cn%5Ct%5Ctbackground:%20var(--fluent-frame-secondary);%5Cn%5Ct%5Ctbody.is-focused%20&%20%7B%5Cn%5Ct%5Ct%5Ctbackground:%20var(--fluent-frame-secondary-focused);%5Cn%5Ct%5Ct%7D%5Cn%5Ct%7D%5Cn%5Cn%5Ct//%20Hide%20the%20fade%20out%20on%20the%20view%20header.%5Cn%5Ct//%20We%20can't%20transition%20linear%20gradients%20with%20CSS,%20so%20it%20just%20has%20to%20be%20disabled.%5Cn%5Ct%23%7B$select-workspace-main-content%7D%20%3E%20.workspace-leaf-content%20%3E%20.view-header%20%3E%20.view-header-title-container::after%20%7B%5Cn%5Ct%5Ctdisplay:%20none;%5Cn%5Ct%7D%5Cn%5Cn%5Ct//%20Force%20the%20sidebar%20nav-headers%20to%20be%20visible.%5Cn%5Ct//%20This%20is%20needed%20to%20keep%20the%20spacing%20consistent.%5Cn%5Ct%23%7B$select-workspace-sidebar-content%7D%20%3E%20.workspace-leaf-content%20%3E%20.view-header%20%7B%5Cn%5Ct%5Ctdisplay:%20block%20!important;%5Cn%5Ct%5Ct&%3E*%20%7B%5Cn%5Ct%5Ct%5Ctdisplay:%20none;%5Cn%5Ct%5Ct%7D%5Cn%5Ct%7D%5Cn%5Cn%5Ct//%20Change%20the%20tab%20bar's%20active%20tab%20color.%5Cn%5Ct%23%7B$select-workspace-main-tabs%7D%20%7B%5Cn%5Ct%5Ct//%20Use%20the%20fluent%20focus%20transition.%5Cn%5Ct%5Ct%3E%20.workspace-tab-header:not(:hover).is-active%20%7B%5Cn%5Ct%5Ct%5Ct@include%20transition-frame-background;%5Cn%5Cn%5Ct%5Ct%5Ct//%20Apply%20to%20tab%20curve.%5Cn%5Ct%5Ct%5Ct&::before,%20&::after%20%7B%5Cn%5Ct%5Ct%5Ct%5Ctwill-change:%20box-shadow;%5Cn%5Ct%5Ct%5Ct%5Cttransition:%20box-shadow%20$animation-speed-window-focus%20ease;%5Cn%5Ct%5Ct%5Ct%7D%5Cn%5Ct%5Ct%7D%5Cn%5Cn%5Ct%5Ct//%20Use%20the%20fluent%20focus%20colors.%5Cn%5Ct%5Ct--tab-background-active:%20var(--fluent-frame-secondary);%5Cn%5Ct%5Ctbody.is-focused%20&%20%7B%5Cn%5Ct%5Ct%5Ct--tab-background-active:%20var(--fluent-frame-secondary-focused);%5Cn%5Ct%5Ct%7D%5Cn%5Ct%7D%5Cn%7D%5Cn%22,%22@import%20%5C%22../selectors%5C%22;%5Cn%5Cn//%20---------------------------------------------------------------------------------------------------------------------%5Cn//%20Make%20the%20drag%20handles%20not%20cover%20the%20title%20bar%20in%20hidden%20frame%20style.%5Cn//%20---------------------------------------------------------------------------------------------------------------------%5Cn%5Cnbody.is-hidden-frameless%20%23%7B$select-workspace%7D%20%7B%5Cn%5Cn%5Ct.workspace-split%20%3E%20.workspace-leaf-resize-handle,%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20//%20Sidebar%5Cn%5Ct.workspace-split.mod-root%20%3E%20.workspace-tabs%20%3E%20.workspace-leaf-resize-handle%20//%20Splits%5Cn%5Ct%7B%5Cn%5Ct%5Ctclip-path:%20inset(calc(var(--header-height)%20+%20var(--fluent-nav-height,%200px))%200%200%200);%5Cn%5Ct%7D%5Cn%5Cn%7D%5Cn%22,%22@import%20%5C%22../selectors%5C%22;%5Cn%5Cn//%20---------------------------------------------------------------------------------------------------------------------%5Cn//%20Adds%20an%20accent-colored%20bar%20to%20help%20signify%20which%20sidebar%20tab%20is%20active.%5Cn//%20---------------------------------------------------------------------------------------------------------------------%5Cn%5Cn%23%7B$select-workspace%7D%20.mod-top-left-space,%5Cn%23%7B$select-workspace%7D%20.mod-top-right-space%20%7B%5Cn%5Ct.workspace-tab-header.is-active%20%3E%20.workspace-tab-header-inner%20%7B%5Cn%5Ct%5Ct$padding:%206px;%5Cn%5Ct%5Ctposition:%20relative;%5Cn%5Cn%5Ct%5Ct&::before%20%7B%5Cn%5Ct%5Ct%5Ctcontent:%20%5C%22%5C%22;%5Cn%5Ct%5Ct%5Ctdisplay:%20block;%5Cn%5Ct%5Ct%5Ctposition:%20absolute;%5Cn%5Ct%5Ct%5Ctdisplay:%20block;%5Cn%5Cn%5Ct%5Ct%5Ctborder-radius:%200;%5Cn%5Cn%5Ct%5Ct%5Ctleft:%20$padding;%5Cn%5Ct%5Ct%5Ctright:%20$padding;%5Cn%5Ct%5Ct%5Ctwidth:%20calc(100%25%20-%20%23%7B$padding%20*%202%7D);%5Cn%5Ct%5Ct%5Ctbottom:%202px;%5Cn%5Ct%5Ct%5Ctheight:%202px;%5Cn%5Ct%5Ct%5Ctborder-radius:%206px;%5Cn%5Cn%5Ct%5Ct%5Ctbackground-color:%20hsl(var(--color-accent-hsl));%5Cn%5Ct%5Ct%7D%5Cn%5Ct%7D%5Cn%7D%5Cn%22,%22@import%20%5C%22../selectors%5C%22;%5Cn%5Cn//%20---------------------------------------------------------------------------------------------------------------------%5Cn//%20Allows%20for%20the%20tooltip%20to%20be%20styled.%5Cn//%20---------------------------------------------------------------------------------------------------------------------%5Cn%5Cnbody%20%3E%20%23%7B$select-tooltip%7D%20%7B%5Cn%5Ct--background-modifier-message:%20var(--fluent-tooltip-border);%5Cn%5Ctbackground:%20var(--fluent-tooltip-background);%5Cn%5Ctborder:%20var(--fluent-tooltip-border)%201px%20solid;%5Cn%5Ctcolor:%20var(--fluent-tooltip-text);%5Cn%5Cn%5Ctbackdrop-filter:%20blur(var(--fluent-backdrop-blur));%5Cn%7D%5Cn%22,%22%5Cn%5Cn@import%20%5C%22../selectors%5C%22;%5Cn%5Cn//%20---------------------------------------------------------------------------------------------------------------------%5Cn//%20Allows%20for%20context%20menus%20to%20be%20styled.%5Cn//%20---------------------------------------------------------------------------------------------------------------------%5Cn%5Cnbody%20%3E%20%23%7B$select-menu%7D%20%7B%5Cn%5Ctbackground:%20var(--fluent-menu-background);%5Cn%5Ctborder-color:%20var(--fluent-menu-border);%5Cn%5Ctcolor:%20var(--fluent-menu-text);%5Cn%5Cn%5Ctbackdrop-filter:%20blur(var(--fluent-backdrop-blur));%5Cn%7D%5Cn%22,%22@use%20%5C%22sass:color%5C%22;%5Cn@use%20%5C%22sass:map%5C%22;%5Cn@use%20%5C%22sass:list%5C%22;%5Cn%5Cn@use%20%5C%22animations%5C%22;%5Cn%5Cn@import%20%5C%22utils%5C%22;%5Cn@import%20%5C%22config%5C%22;%5Cn%5Cn//%20---------------------------------------------------------------------------------------------------------------------%5Cn//%20Core:%5Cn//%20---------------------------------------------------------------------------------------------------------------------%5Cn%5Cn@import%20%5C%22./core/misc%5C%22;%5Cn@import%20%5C%22./core/focus-colors%5C%22;%5Cn@import%20%5C%22./core/frame-decoration-colors%5C%22;%5Cn%5Cn@import%20%5C%22./core/mid-header-rebox%5C%22;%5Cn%5Cn@import%20%5C%22./fixes/fullscreen-titlebar-color%5C%22;%5Cn@import%20%5C%22./fixes/fullscreen-titlebar-padding%5C%22;%5Cn%5Cn//%20---------------------------------------------------------------------------------------------------------------------%5Cn//%20Tweaks:%5Cn//%5Cn//%20Changes%20to%20make%20the%20L&F%20more%20consistent%20with%20Windows%2011,%20at%20the%20cost%20of%5Cn//%20probably%20breaking%20whenever%20the%20DOM%20or%20styles%20of%20Obsidian%20are%20changed.%5Cn//%20---------------------------------------------------------------------------------------------------------------------%5Cn%5Cn@import%20%5C%22./tweaks/better-transluence%5C%22;%5Cn@import%20%5C%22./tweaks/focus-colors-transition%5C%22;%5Cn@import%20%5C%22./tweaks/frame-decoration-win11%5C%22;%5Cn@import%20%5C%22./tweaks/weld-side-dock-and-title%5C%22;%5Cn@import%20%5C%22./tweaks/weld-nav-headers-and-title%5C%22;%5Cn@import%20%5C%22./tweaks/resize-drag-handles%5C%22;%5Cn@import%20%5C%22./tweaks/tab-header-active%5C%22;%5Cn%5Cn@import%20%5C%22./tweaks/style-tooltip%5C%22;%5Cn@import%20%5C%22./tweaks/style-menu%5C%22;%5Cn%5Cn//%20---------------------------------------------------------------------------------------------------------------------%5Cn//%20Theme%20Colors:%5Cn//%20---------------------------------------------------------------------------------------------------------------------%5Cn%5Cn//%20Mixin%20for%20populating%20variables%20from%20a%20theme%20color%20map.%5Cn@mixin%20theme($colors)%20%7B%5Cn%5Ct--fluent-focus-accent:%20%23%7Bcolor.hue(map.get($colors,%20%5C%22focus-accent%5C%22))%7D;%5Cn%5Cn%5Ct//%20Window%20frame%20title%20bar.%5Cn%5Ct@include%20focus-accent-var(%5C%22titlebar-background%5C%22,%20map.get($colors,%20%5C%22frame-title%5C%22));%5Cn%5Ct@include%20focus-accent-var(%5C%22ribbon-background%5C%22,%20map.get($colors,%20%5C%22frame-title%5C%22));%5Cn%5Ct@include%20focus-accent-var(%5C%22ribbon-background-collapsed%5C%22,%20map.get($colors,%20%5C%22frame-title%5C%22));%5Cn%5Ct@include%20focus-accent-var(%5C%22tab-outline-color%5C%22,%20map.get($colors,%20%5C%22frame-tab-border%5C%22));%5Cn%5Ct&.is-translucent:not(.is-frameless)%20%7B%5Cn%5Ct%5Ct--titlebar-background:%20%23%7Blist.nth(map.get($colors,%20%5C%22frame-title%5C%22),%206)%7D;%5Cn%5Ct%5Ct--titlebar-background-focused:%20%23%7Blist.nth(map.get($colors,%20%5C%22frame-title%5C%22),%206)%7D;%5Cn%5Ct%7D%5Cn%5Cn%5Ct//%20Window%20frame%20secondary.%5Cn%5Ct@include%20focus-accent-var(%5C%22fluent-frame-secondary%5C%22,%20map.get($colors,%20%5C%22frame-secondary%5C%22));%5Cn%5Cn%5Ct//%20Window%20frame%20decorations.%5Cn%5Ct--fluent-frame-button-text:%20%23%7Bmap.get($colors,%20%5C%22frame-button-text%5C%22)%7D;%5Cn%5Ct--fluent-frame-button-text-hover:%20%23%7Bmap.get($colors,%20%5C%22frame-button-text-hover%5C%22)%7D;%5Cn%5Ct--fluent-frame-close-text-hover:%20%23%7Bmap.get($colors,%20%5C%22frame-button-close-text-hover%5C%22)%7D;%5Cn%5Ct--fluent-frame-close-background-hover:%20%23%7Bmap.get($colors,%20%5C%22frame-button-close-background%5C%22)%7D;%5Cn%5Ct--fluent-frame-button-background-hover:%20%23%7Bmap.get($colors,%20%5C%22frame-button-background-hover%5C%22)%7D;%5Cn%5Ct--fluent-frame-button-background-hover-focused:%20hsla(%5Cn%5Ct%5Ctvar(--fluent-focus-accent),%5Cn%5Ct%5Ct95%25,%5Cn%5Ct%5Ct%23%7Bcolor.lightness(map.get($colors,%20%5C%22focus-accent%5C%22))%20*%200.7%7D,%5Cn%5Ct%5Ct%23%7Bcolor.opacity(map.get($colors,%20%5C%22frame-button-background-hover%5C%22))%7D%5Cn%5Ct);%5Cn%5Ct&.is-translucent%20%7B%5Cn%5Ct%5Ct--fluent-frame-button-background-hover-focused:%20%23%7Bmap.get($colors,%20%5C%22frame-button-background-hover%5C%22)%7D;%5Cn%5Ct%7D%5Cn%5Cn%5Ct//%20Misc.%5Cn%5Ct--background-secondary:%20%23%7Bmap.get($colors,%20%5C%22sidebar-background%5C%22)%7D;%5Cn%5Ct--background-modifier-hover:%20%23%7Bmap.get($colors,%20%5C%22hover-overlay%5C%22)%7D;%5Cn%5Ct--icon-color:%20%23%7Bmap.get($colors,%20%5C%22icon%5C%22)%7D;%5Cn%5Ct--icon-color-focused:%20%23%7Bmap.get($colors,%20%5C%22icon-focused%5C%22)%7D;%5Cn%5Ct--icon-color-hover:%20%23%7Bmap.get($colors,%20%5C%22icon-hover%5C%22)%7D;%5Cn%5Cn%5Ct--fluent-tooltip-background:%20%23%7Bmap.get($colors,%20%5C%22tooltip-background%5C%22)%7D;%5Cn%5Ct--fluent-tooltip-border:%20%23%7Bmap.get($colors,%20%5C%22tooltip-border%5C%22)%7D;%5Cn%5Ct--fluent-tooltip-text:%20%23%7Bmap.get($colors,%20%5C%22tooltip-text%5C%22)%7D;%5Cn%5Cn%5Ct--fluent-menu-background:%20%23%7Bmap.get($colors,%20%5C%22menu-background%5C%22)%7D;%5Cn%5Ct--fluent-menu-border:%20%23%7Bmap.get($colors,%20%5C%22menu-border%5C%22)%7D;%5Cn%5Ct--fluent-menu-text:%20%23%7Bmap.get($colors,%20%5C%22menu-text%5C%22)%7D;%5Cn%5Cn%5Cn%5Ct//%20Tabs.%5Cn%5Ct--tab-text-color:%20%23%7Bmap.get($colors,%20%5C%22tab-text%5C%22)%7D;%5Cn%5Ct--tab-text-color-focused:%20%23%7Bmap.get($colors,%20%5C%22tab-text%5C%22)%7D;%5Cn%7D%5Cn%5Cnbody%20%7B%5Cn%5Ct--fluent-backdrop-blur:%20%23%7B$backdrop-blur%7D;%5Cn%5Ct--icon-opacity-hover:%20var(--icon-opacity);%5Cn%5Cn%5Ct&.show-view-header%20%7B%5Cn%5Ct%5Ct--fluent-nav-height:%20%23%7B$navbar-height%7D;%5Cn%5Ct%7D%5Cn%7D%5Cn%5Cnbody.theme-light%20%7B%5Cn%5Ct@include%20theme($light-theme);%5Cn%7D%5Cn%5Cnbody.theme-dark%20%7B%5Cn%5Ct@include%20theme($dark-theme);%5Cn%7D%5Cn%22,%22@use%20%5C%22sass:color%5C%22;%5Cn@use%20%5C%22sass:list%5C%22;%5Cn%5Cn//%20Mixin%20for%20generating%20hsla%20colors%20based%20on%20the%20frame%20focus%20accent%20accent.%5Cn@mixin%20focus-accent-var($name,%20$values)%20%7B%5Cn%5Ct$focused-hsl:%20var(--fluent-focus-accent),%20%23%7Blist.nth($values,%201)%7D,%20%23%7Blist.nth($values,%202)%7D;%5Cn%5Ct--%23%7B$name%7D:%20hsl(var(--fluent-focus-accent),%200%25,%20%23%7Blist.nth($values,%203)%7D);%5Cn%5Ct--%23%7B$name%7D-focused:%20hsl(%23%7B$focused-hsl%7D);%5Cn%5Cn%5Ct//%20Translucent.%5Cn%5Ct&.is-translucent.is-frameless%20%7B%5Cn%5Ct%5Ct@if%20(%23%7Blist.nth($values,%204)%7D%20!=%20%5C%22true%5C%22)%20%7B%5Cn%5Ct%5Ct%5Ct--%23%7B$name%7D:%20hsl(0deg,%200%25,%20%23%7Blist.nth($values,%202)%7D);%5Cn%5Ct%5Ct%5Ct--%23%7B$name%7D-focused:%20hsla(0deg,%200%25,%20%23%7Blist.nth($values,%202)%7D,%20%23%7B100%25%20-%20$translucency%7D);%5Cn%5Ct%5Ct%7D%5Cn%5Ct%7D%5Cn%5Cn%5Ct//%20Native%20border.%5Cn%5Ct&:not(.is-frameless)%20%7B%5Cn%5Ct%5Ct--%23%7B$name%7D-focused:%20hsl(var(--fluent-focus-accent),%20%23%7Blist.nth($values,%205)%7D,%20%23%7Blist.nth($values,%203)%7D);%5Cn%5Ct%7D%5Cn%7D%5Cn%22%5D%7D */
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImZyYW1lLWJ1dHRvbnMtY29sb3JzLnNjc3MiLCJ0aGVtZS5jc3MiLCJmcmFtZS1idXR0b25zLXdpbjExLnNjc3MiLCJtaXhpbnMvd2hlbi1mcmFtZS5zY3NzIiwibWl4aW5zL3doZW4tb3Muc2NzcyIsImZyYW1lLWRlY29yYXRpb24tY29sb3Iuc2NzcyIsInNpZGViYXItdGFiLWhlYWRlci11bmRlcmxpbmUuc2NzcyIsInRpdGxlYmFyLWNvbG9yLnNjc3MiLCJ0aXRsZWJhci1mb2N1cy1jb2xvci5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQVFBO0VBQ0Esc0RBQUE7RUFDQSxzRUFBQTtFQUNBLHdFQUFBO0FDUEE7QURjQTtFQUVBLHVFQUFBO0VBQ0Esc0RBQUE7QUNiQTs7QUNLQTtFQUdBLDBCQUFBO0FESkE7QUVIQTtFRFdBLFlBWkE7QURPQTtBRUZBO0VEV0EsWUFmQTtBRFNBOztBQ1VBO0VBR0EscUNBQUE7QURUQTs7QUNhQTtFQUNBLGtCQUFBO0FEVkE7QUNlQTtFQUNBLGtCQUFBO0VBQ0EsV0F0Q0E7RUF1Q0EsWUF2Q0E7QUQwQkE7QUNnQkE7RUFFQSxjQUFBO0VBQ0EsV0FBQTtFQUVBLGtCQUFBO0VBQ0Esb0JBQUE7RUFDQSxVQS9DQTtFQWdEQSxXQWxEQTtFQW1EQSxZQW5EQTtFQW9EQSx3QkFBQTtBRGhCQTtBQ21CQTtFQUNBLGFBQUE7QURqQkE7O0FHL0JBO0VGMkRBLG9EQUFBO0FEeEJBOztBQ3FDQTtFQUNBLG9HQUFBO0FEbENBOztBQ29EQTtFQUNBLHdHQUFBO0FEakRBO0FDK0RBO0VBQ0EsY0FBQTtFQUNBLDBHQUFBO0FEN0RBOztBQzZFQTtFQUdBLGtKQUFBO0FENUVBOztBSTNEQTtFQUNBLHVCQUFBO0FKOERBOztBSy9EQTtFQUVBLGtCQUFBO0FMaUVBO0FLL0RBO0VBQ0EsV0FBQTtFQUNBLGNBQUE7RUFDQSxrQkFBQTtFQUNBLGNBQUE7RUFFQSxnQkFBQTtFQUVBLFNBWEE7RUFZQSxVQVpBO0VBYUEsd0JBQUE7RUFDQSxXQUFBO0VBQ0EsV0FBQTtFQUNBLGtCQUFBO0VBRUEsOENBQUE7QUw4REE7O0FNbkZBO0VBQ0EsaUNBQUE7QU5zRkE7O0FPdEZBO0VBQ0EseURBQUE7RUFDQSxnRkFBQTtBUHlGQSIsImZpbGUiOiJ0aGVtZS5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvLyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS1cbi8vIENoYW5nZSBmcmFtZSBkZWNvcmF0aW9uIGJ1dHRvbiBob3ZlciBjb2xvcnMuXG4vLyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS1cblxuJXRpdGxlYmFyICN7JHNlbGVjdC13aGVuLWFwcC1mb2N1c30ge1xuXG4gICAgLy8gTWluaW1pemUvbWF4aW1pemUgYnV0dG9ucy5cbiAgICAvLyBVc2VzIGEgZGlmZmVyZW50IGNvbG9yIHNjaGVtZSB0aGFuIG90aGVyIHRpdGxlIGVsZW1lbnRzLlxuICAgIC50aXRsZWJhci1idXR0b24ge1xuICAgIFx0LS10aXRsZWJhci10ZXh0LWNvbG9yOiB2YXIoLS1mbHVlbnQtZnJhbWUtYnV0dG9uLXRleHQpO1xuXHQgICAgLS10aXRsZWJhci10ZXh0LWNvbG9yLWZvY3VzZWQ6IHZhcigtLWZsdWVudC1mcmFtZS1idXR0b24tdGV4dC1mb2N1c2VkKTtcbiAgICBcdC0tYmFja2dyb3VuZC1tb2RpZmllci1ob3ZlcjogdmFyKC0tZmx1ZW50LWZyYW1lLWJ1dHRvbi1iYWNrZ3JvdW5kLWhvdmVyKTtcbiAgICB9XG5cbiAgICAvLyBDbG9zZSBidXR0b24uXG4gICAgLy8gV2luZG93cyAxMSB1c2VzIGEgZGFya2VyIHJlZCB0aGFuIHRoZSBkZWZhdWx0IHByb3ZpZGVkIGJ5IE9ic2lkaWFuLlxuICAgIEBpbmNsdWRlIHdoZW4td2luZG93cyB7XG4gICAgICAgIC50aXRsZWJhci1idXR0b24ubW9kLWNsb3NlIHtcbiAgICAgICAgICAgICY6aG92ZXIsXG4gICAgICAgICAgICAmOmZvY3VzIHtcbiAgICAgICAgICAgICAgICAtLWJhY2tncm91bmQtbW9kaWZpZXItZXJyb3I6IHZhcigtLWZsdWVudC1mcmFtZS1jbG9zZS1iYWNrZ3JvdW5kLWhvdmVyKTtcbiAgICAgICAgICAgICAgICBjb2xvcjogdmFyKC0tZmx1ZW50LWZyYW1lLWNsb3NlLXRleHQtaG92ZXIpICFpbXBvcnRhbnQ7XG4gICAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICB9XG5cbn1cbiIsImJvZHkgPiAudGl0bGViYXIgOi0tcGFyZW50KGJvZHkpOmlzKC5pcy1mb2N1c2VkKSAudGl0bGViYXItYnV0dG9uLCBib2R5IC53b3Jrc3BhY2UgPiAud29ya3NwYWNlLXJpYmJvbi5zaWRlLWRvY2stcmliYm9uIDotLXBhcmVudChib2R5KTppcyguaXMtZm9jdXNlZCkgLnRpdGxlYmFyLWJ1dHRvbiB7XG4gIC0tdGl0bGViYXItdGV4dC1jb2xvcjogdmFyKC0tZmx1ZW50LWZyYW1lLWJ1dHRvbi10ZXh0KTtcbiAgLS10aXRsZWJhci10ZXh0LWNvbG9yLWZvY3VzZWQ6IHZhcigtLWZsdWVudC1mcmFtZS1idXR0b24tdGV4dC1mb2N1c2VkKTtcbiAgLS1iYWNrZ3JvdW5kLW1vZGlmaWVyLWhvdmVyOiB2YXIoLS1mbHVlbnQtZnJhbWUtYnV0dG9uLWJhY2tncm91bmQtaG92ZXIpO1xufVxuYm9keSA+IC50aXRsZWJhciA6LS1wYXJlbnQoYm9keSk6aXMoLmlzLWZvY3VzZWQpIDotLXBhcmVudChib2R5KTppcygubW9kLXdpbmRvd3MpIC50aXRsZWJhci1idXR0b24ubW9kLWNsb3NlOmhvdmVyLCBib2R5IC53b3Jrc3BhY2UgPiAud29ya3NwYWNlLXJpYmJvbi5zaWRlLWRvY2stcmliYm9uIDotLXBhcmVudChib2R5KTppcyguaXMtZm9jdXNlZCkgOi0tcGFyZW50KGJvZHkpOmlzKC5tb2Qtd2luZG93cykgLnRpdGxlYmFyLWJ1dHRvbi5tb2QtY2xvc2U6aG92ZXIsIGJvZHkgPiAudGl0bGViYXIgOi0tcGFyZW50KGJvZHkpOmlzKC5pcy1mb2N1c2VkKSA6LS1wYXJlbnQoYm9keSk6aXMoLm1vZC13aW5kb3dzKSAudGl0bGViYXItYnV0dG9uLm1vZC1jbG9zZTpmb2N1cywgYm9keSAud29ya3NwYWNlID4gLndvcmtzcGFjZS1yaWJib24uc2lkZS1kb2NrLXJpYmJvbiA6LS1wYXJlbnQoYm9keSk6aXMoLmlzLWZvY3VzZWQpIDotLXBhcmVudChib2R5KTppcygubW9kLXdpbmRvd3MpIC50aXRsZWJhci1idXR0b24ubW9kLWNsb3NlOmZvY3VzIHtcbiAgLS1iYWNrZ3JvdW5kLW1vZGlmaWVyLWVycm9yOiB2YXIoLS1mbHVlbnQtZnJhbWUtY2xvc2UtYmFja2dyb3VuZC1ob3Zlcik7XG4gIGNvbG9yOiB2YXIoLS1mbHVlbnQtZnJhbWUtY2xvc2UtdGV4dC1ob3ZlcikgIWltcG9ydGFudDtcbn1cblxuYm9keSA+IC50aXRsZWJhciA6LS1wYXJlbnQoYm9keSk6aXMoLm1vZC13aW5kb3dzKSAudGl0bGViYXItYnV0dG9uLm1vZC1taW5pbWl6ZSwgYm9keSAud29ya3NwYWNlID4gLndvcmtzcGFjZS1yaWJib24uc2lkZS1kb2NrLXJpYmJvbiA6LS1wYXJlbnQoYm9keSk6aXMoLm1vZC13aW5kb3dzKSAudGl0bGViYXItYnV0dG9uLm1vZC1taW5pbWl6ZSwgYm9keSA+IC50aXRsZWJhciA6LS1wYXJlbnQoYm9keSk6aXMoLm1vZC13aW5kb3dzKSAudGl0bGViYXItYnV0dG9uLm1vZC1tYXhpbWl6ZSwgYm9keSAud29ya3NwYWNlID4gLndvcmtzcGFjZS1yaWJib24uc2lkZS1kb2NrLXJpYmJvbiA6LS1wYXJlbnQoYm9keSk6aXMoLm1vZC13aW5kb3dzKSAudGl0bGViYXItYnV0dG9uLm1vZC1tYXhpbWl6ZSwgYm9keSA+IC50aXRsZWJhciA6LS1wYXJlbnQoYm9keSk6aXMoLm1vZC13aW5kb3dzKSAudGl0bGViYXItYnV0dG9uLm1vZC1jbG9zZSwgYm9keSAud29ya3NwYWNlID4gLndvcmtzcGFjZS1yaWJib24uc2lkZS1kb2NrLXJpYmJvbiA6LS1wYXJlbnQoYm9keSk6aXMoLm1vZC13aW5kb3dzKSAudGl0bGViYXItYnV0dG9uLm1vZC1jbG9zZSB7XG4gIHBhZGRpbmc6IDAgMThweCAhaW1wb3J0YW50O1xufVxuYm9keSA+IC50aXRsZWJhciA6LS1wYXJlbnQoYm9keSk6aXMoLm1vZC13aW5kb3dzKSAudGl0bGViYXItYnV0dG9uIDotLXBhcmVudChib2R5KTppcyguaXMtaGlkZGVuLWZyYW1lbGVzcyksIGJvZHkgLndvcmtzcGFjZSA+IC53b3Jrc3BhY2UtcmliYm9uLnNpZGUtZG9jay1yaWJib24gOi0tcGFyZW50KGJvZHkpOmlzKC5tb2Qtd2luZG93cykgLnRpdGxlYmFyLWJ1dHRvbiA6LS1wYXJlbnQoYm9keSk6aXMoLmlzLWhpZGRlbi1mcmFtZWxlc3MpIHtcbiAgaGVpZ2h0OiA0MHB4O1xufVxuYm9keSA+IC50aXRsZWJhciA6LS1wYXJlbnQoYm9keSk6aXMoLm1vZC13aW5kb3dzKSAudGl0bGViYXItYnV0dG9uIDotLXBhcmVudChib2R5KTppcyguaXMtZnJhbWVsZXNzOm5vdCguaXMtaGlkZGVuLWZyYW1lbGVzcykpLCBib2R5IC53b3Jrc3BhY2UgPiAud29ya3NwYWNlLXJpYmJvbi5zaWRlLWRvY2stcmliYm9uIDotLXBhcmVudChib2R5KTppcygubW9kLXdpbmRvd3MpIC50aXRsZWJhci1idXR0b24gOi0tcGFyZW50KGJvZHkpOmlzKC5pcy1mcmFtZWxlc3M6bm90KC5pcy1oaWRkZW4tZnJhbWVsZXNzKSkge1xuICBoZWlnaHQ6IDI4cHg7XG59XG5cbmJvZHkgOi0tcGFyZW50KGJvZHkpOmlzKC5tb2Qtd2luZG93cykge1xuICAtLWZyYW1lLXJpZ2h0LXNwYWNlOiAxNDJweCAhaW1wb3J0YW50O1xufVxuXG5ib2R5ID4gLnRpdGxlYmFyIDotLXBhcmVudChib2R5KTppcygubW9kLXdpbmRvd3MpIC50aXRsZWJhci1idXR0b24sIGJvZHkgLndvcmtzcGFjZSA+IC53b3Jrc3BhY2UtcmliYm9uLnNpZGUtZG9jay1yaWJib24gOi0tcGFyZW50KGJvZHkpOmlzKC5tb2Qtd2luZG93cykgLnRpdGxlYmFyLWJ1dHRvbiB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbn1cbmJvZHkgPiAudGl0bGViYXIgOi0tcGFyZW50KGJvZHkpOmlzKC5tb2Qtd2luZG93cykgLnRpdGxlYmFyLWJ1dHRvbi5tb2QtbWluaW1pemUgPiBzdmcsIGJvZHkgLndvcmtzcGFjZSA+IC53b3Jrc3BhY2UtcmliYm9uLnNpZGUtZG9jay1yaWJib24gOi0tcGFyZW50KGJvZHkpOmlzKC5tb2Qtd2luZG93cykgLnRpdGxlYmFyLWJ1dHRvbi5tb2QtbWluaW1pemUgPiBzdmcsIGJvZHkgPiAudGl0bGViYXIgOi0tcGFyZW50KGJvZHkpOmlzKC5tb2Qtd2luZG93cykgLnRpdGxlYmFyLWJ1dHRvbi5tb2QtbWF4aW1pemUgPiBzdmcsIGJvZHkgLndvcmtzcGFjZSA+IC53b3Jrc3BhY2UtcmliYm9uLnNpZGUtZG9jay1yaWJib24gOi0tcGFyZW50KGJvZHkpOmlzKC5tb2Qtd2luZG93cykgLnRpdGxlYmFyLWJ1dHRvbi5tb2QtbWF4aW1pemUgPiBzdmcsIGJvZHkgPiAudGl0bGViYXIgOi0tcGFyZW50KGJvZHkpOmlzKC5tb2Qtd2luZG93cykgLnRpdGxlYmFyLWJ1dHRvbi5tb2QtY2xvc2UgPiBzdmcsIGJvZHkgLndvcmtzcGFjZSA+IC53b3Jrc3BhY2UtcmliYm9uLnNpZGUtZG9jay1yaWJib24gOi0tcGFyZW50KGJvZHkpOmlzKC5tb2Qtd2luZG93cykgLnRpdGxlYmFyLWJ1dHRvbi5tb2QtY2xvc2UgPiBzdmcge1xuICB2aXNpYmlsaXR5OiBoaWRkZW47XG4gIHdpZHRoOiAxMHB4O1xuICBoZWlnaHQ6IDEwcHg7XG59XG5ib2R5ID4gLnRpdGxlYmFyIDotLXBhcmVudChib2R5KTppcygubW9kLXdpbmRvd3MpIC50aXRsZWJhci1idXR0b24ubW9kLW1pbmltaXplOjpiZWZvcmUsIGJvZHkgLndvcmtzcGFjZSA+IC53b3Jrc3BhY2UtcmliYm9uLnNpZGUtZG9jay1yaWJib24gOi0tcGFyZW50KGJvZHkpOmlzKC5tb2Qtd2luZG93cykgLnRpdGxlYmFyLWJ1dHRvbi5tb2QtbWluaW1pemU6OmJlZm9yZSwgYm9keSA+IC50aXRsZWJhciA6LS1wYXJlbnQoYm9keSk6aXMoLm1vZC13aW5kb3dzKSAudGl0bGViYXItYnV0dG9uLm1vZC1taW5pbWl6ZTo6YWZ0ZXIsIGJvZHkgLndvcmtzcGFjZSA+IC53b3Jrc3BhY2UtcmliYm9uLnNpZGUtZG9jay1yaWJib24gOi0tcGFyZW50KGJvZHkpOmlzKC5tb2Qtd2luZG93cykgLnRpdGxlYmFyLWJ1dHRvbi5tb2QtbWluaW1pemU6OmFmdGVyLCBib2R5ID4gLnRpdGxlYmFyIDotLXBhcmVudChib2R5KTppcygubW9kLXdpbmRvd3MpIC50aXRsZWJhci1idXR0b24ubW9kLW1heGltaXplOjpiZWZvcmUsIGJvZHkgLndvcmtzcGFjZSA+IC53b3Jrc3BhY2UtcmliYm9uLnNpZGUtZG9jay1yaWJib24gOi0tcGFyZW50KGJvZHkpOmlzKC5tb2Qtd2luZG93cykgLnRpdGxlYmFyLWJ1dHRvbi5tb2QtbWF4aW1pemU6OmJlZm9yZSwgYm9keSA+IC50aXRsZWJhciA6LS1wYXJlbnQoYm9keSk6aXMoLm1vZC13aW5kb3dzKSAudGl0bGViYXItYnV0dG9uLm1vZC1tYXhpbWl6ZTo6YWZ0ZXIsIGJvZHkgLndvcmtzcGFjZSA+IC53b3Jrc3BhY2UtcmliYm9uLnNpZGUtZG9jay1yaWJib24gOi0tcGFyZW50KGJvZHkpOmlzKC5tb2Qtd2luZG93cykgLnRpdGxlYmFyLWJ1dHRvbi5tb2QtbWF4aW1pemU6OmFmdGVyLCBib2R5ID4gLnRpdGxlYmFyIDotLXBhcmVudChib2R5KTppcygubW9kLXdpbmRvd3MpIC50aXRsZWJhci1idXR0b24ubW9kLWNsb3NlOjpiZWZvcmUsIGJvZHkgLndvcmtzcGFjZSA+IC53b3Jrc3BhY2UtcmliYm9uLnNpZGUtZG9jay1yaWJib24gOi0tcGFyZW50KGJvZHkpOmlzKC5tb2Qtd2luZG93cykgLnRpdGxlYmFyLWJ1dHRvbi5tb2QtY2xvc2U6OmJlZm9yZSwgYm9keSA+IC50aXRsZWJhciA6LS1wYXJlbnQoYm9keSk6aXMoLm1vZC13aW5kb3dzKSAudGl0bGViYXItYnV0dG9uLm1vZC1jbG9zZTo6YWZ0ZXIsIGJvZHkgLndvcmtzcGFjZSA+IC53b3Jrc3BhY2UtcmliYm9uLnNpZGUtZG9jay1yaWJib24gOi0tcGFyZW50KGJvZHkpOmlzKC5tb2Qtd2luZG93cykgLnRpdGxlYmFyLWJ1dHRvbi5tb2QtY2xvc2U6OmFmdGVyIHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIGNvbnRlbnQ6IFwiXCI7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgdG9wOiBjYWxjKDUwJSAtIDVweCk7XG4gIGxlZnQ6IDE4cHg7XG4gIHdpZHRoOiAxMHB4O1xuICBoZWlnaHQ6IDEwcHg7XG4gIGJhY2tncm91bmQ6IGN1cnJlbnRDb2xvcjtcbn1cbmJvZHkgPiAudGl0bGViYXIgOi0tcGFyZW50KGJvZHkpOmlzKC5tb2Qtd2luZG93cykgLnRpdGxlYmFyLWJ1dHRvbi5tb2QtbWluaW1pemU6OmFmdGVyLCBib2R5IC53b3Jrc3BhY2UgPiAud29ya3NwYWNlLXJpYmJvbi5zaWRlLWRvY2stcmliYm9uIDotLXBhcmVudChib2R5KTppcygubW9kLXdpbmRvd3MpIC50aXRsZWJhci1idXR0b24ubW9kLW1pbmltaXplOjphZnRlciwgYm9keSA+IC50aXRsZWJhciA6LS1wYXJlbnQoYm9keSk6aXMoLm1vZC13aW5kb3dzKSAudGl0bGViYXItYnV0dG9uLm1vZC1tYXhpbWl6ZTo6YWZ0ZXIsIGJvZHkgLndvcmtzcGFjZSA+IC53b3Jrc3BhY2UtcmliYm9uLnNpZGUtZG9jay1yaWJib24gOi0tcGFyZW50KGJvZHkpOmlzKC5tb2Qtd2luZG93cykgLnRpdGxlYmFyLWJ1dHRvbi5tb2QtbWF4aW1pemU6OmFmdGVyLCBib2R5ID4gLnRpdGxlYmFyIDotLXBhcmVudChib2R5KTppcygubW9kLXdpbmRvd3MpIC50aXRsZWJhci1idXR0b24ubW9kLWNsb3NlOjphZnRlciwgYm9keSAud29ya3NwYWNlID4gLndvcmtzcGFjZS1yaWJib24uc2lkZS1kb2NrLXJpYmJvbiA6LS1wYXJlbnQoYm9keSk6aXMoLm1vZC13aW5kb3dzKSAudGl0bGViYXItYnV0dG9uLm1vZC1jbG9zZTo6YWZ0ZXIge1xuICBkaXNwbGF5OiBub25lO1xufVxuXG5ib2R5ID4gLnRpdGxlYmFyIDotLXBhcmVudChib2R5KTppcygubW9kLXdpbmRvd3MpIC5tb2QtbWluaW1pemU6OmJlZm9yZSA6LS1wYXJlbnQoYm9keSk6aXMoLm1vZC13aW5kb3dzKSwgYm9keSAud29ya3NwYWNlID4gLndvcmtzcGFjZS1yaWJib24uc2lkZS1kb2NrLXJpYmJvbiA6LS1wYXJlbnQoYm9keSk6aXMoLm1vZC13aW5kb3dzKSAubW9kLW1pbmltaXplOjpiZWZvcmUgOi0tcGFyZW50KGJvZHkpOmlzKC5tb2Qtd2luZG93cykge1xuICBjbGlwLXBhdGg6IHBvbHlnb24oMCA1cHgsIDAgNnB4LCAxMHB4IDZweCwgMTBweCA1cHgpO1xufVxuXG5ib2R5ID4gLnRpdGxlYmFyIDotLXBhcmVudChib2R5KTppcygubW9kLXdpbmRvd3MpIDotLXBhcmVudChib2R5KTppcyg6bm90KC5pcy1tYXhpbWl6ZWQpKSAubW9kLW1heGltaXplOjpiZWZvcmUsIGJvZHkgLndvcmtzcGFjZSA+IC53b3Jrc3BhY2UtcmliYm9uLnNpZGUtZG9jay1yaWJib24gOi0tcGFyZW50KGJvZHkpOmlzKC5tb2Qtd2luZG93cykgOi0tcGFyZW50KGJvZHkpOmlzKDpub3QoLmlzLW1heGltaXplZCkpIC5tb2QtbWF4aW1pemU6OmJlZm9yZSB7XG4gIGNsaXAtcGF0aDogcG9seWdvbigwIDAsIDAgMTBweCwgMTBweCAxMHB4LCAxMHB4IDAsIDAgMCwgMXB4IDFweCwgOXB4IDFweCwgOXB4IDlweCwgMXB4IDlweCwgMXB4IDFweCk7XG59XG5cbmJvZHkgPiAudGl0bGViYXIgOi0tcGFyZW50KGJvZHkpOmlzKC5tb2Qtd2luZG93cykgOi0tcGFyZW50KGJvZHkpOmlzKC5pcy1tYXhpbWl6ZWQpIC5tb2QtbWF4aW1pemU6OmJlZm9yZSwgYm9keSAud29ya3NwYWNlID4gLndvcmtzcGFjZS1yaWJib24uc2lkZS1kb2NrLXJpYmJvbiA6LS1wYXJlbnQoYm9keSk6aXMoLm1vZC13aW5kb3dzKSA6LS1wYXJlbnQoYm9keSk6aXMoLmlzLW1heGltaXplZCkgLm1vZC1tYXhpbWl6ZTo6YmVmb3JlIHtcbiAgY2xpcC1wYXRoOiBwb2x5Z29uKDAgMnB4LCAwIDEwcHgsIDhweCAxMHB4LCA4cHggMnB4LCAwIDJweCwgMXB4IDNweCwgN3B4IDNweCwgN3B4IDlweCwgMXB4IDlweCwgMXB4IDNweCk7XG59XG5ib2R5ID4gLnRpdGxlYmFyIDotLXBhcmVudChib2R5KTppcygubW9kLXdpbmRvd3MpIDotLXBhcmVudChib2R5KTppcyguaXMtbWF4aW1pemVkKSAubW9kLW1heGltaXplOjphZnRlciwgYm9keSAud29ya3NwYWNlID4gLndvcmtzcGFjZS1yaWJib24uc2lkZS1kb2NrLXJpYmJvbiA6LS1wYXJlbnQoYm9keSk6aXMoLm1vZC13aW5kb3dzKSA6LS1wYXJlbnQoYm9keSk6aXMoLmlzLW1heGltaXplZCkgLm1vZC1tYXhpbWl6ZTo6YWZ0ZXIge1xuICBkaXNwbGF5OiBibG9jaztcbiAgY2xpcC1wYXRoOiBwb2x5Z29uKDJweCAzcHgsIDJweCAwLCAxMHB4IDAsIDEwcHggOHB4LCA3cHggOHB4LCA3cHggOHB4LCA5cHggN3B4LCA5cHggMXB4LCAzcHggMXB4LCAzcHggM3B4KTtcbn1cblxuYm9keSA+IC50aXRsZWJhciA6LS1wYXJlbnQoYm9keSk6aXMoLm1vZC13aW5kb3dzKSAubW9kLWNsb3NlOjpiZWZvcmUsIGJvZHkgLndvcmtzcGFjZSA+IC53b3Jrc3BhY2UtcmliYm9uLnNpZGUtZG9jay1yaWJib24gOi0tcGFyZW50KGJvZHkpOmlzKC5tb2Qtd2luZG93cykgLm1vZC1jbG9zZTo6YmVmb3JlIHtcbiAgY2xpcC1wYXRoOiBwb2x5Z29uKDVweCA0LjVweCwgMC41cHggMCwgMCAwLjVweCwgNC41cHggNXB4LCAwIDkuNXB4LCAwLjVweCAxMHB4LCA1cHggNS41cHgsIDkuNXB4IDEwcHgsIDEwcHggOS41cHgsIDUuNXB4IDVweCwgMTBweCAwLjVweCwgOS41cHggMCk7XG59XG5cbmJvZHkgLndvcmtzcGFjZSA+IC5tb2Qtcm9vdCB7XG4gIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50O1xufVxuXG5ib2R5IC53b3Jrc3BhY2UgPiAud29ya3NwYWNlLXNwbGl0Om5vdCgubW9kLXJvb3QpIC53b3Jrc3BhY2UtdGFiLWhlYWRlci5pcy1hY3RpdmUgPiAud29ya3NwYWNlLXRhYi1oZWFkZXItaW5uZXIge1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG59XG5ib2R5IC53b3Jrc3BhY2UgPiAud29ya3NwYWNlLXNwbGl0Om5vdCgubW9kLXJvb3QpIC53b3Jrc3BhY2UtdGFiLWhlYWRlci5pcy1hY3RpdmUgPiAud29ya3NwYWNlLXRhYi1oZWFkZXItaW5uZXI6OmJlZm9yZSB7XG4gIGNvbnRlbnQ6IFwiXCI7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBib3JkZXItcmFkaXVzOiAwO1xuICBsZWZ0OiA2cHg7XG4gIHJpZ2h0OiA2cHg7XG4gIHdpZHRoOiBjYWxjKDEwMCUgLSAxMnB4KTtcbiAgYm90dG9tOiAycHg7XG4gIGhlaWdodDogMnB4O1xuICBib3JkZXItcmFkaXVzOiA2cHg7XG4gIGJhY2tncm91bmQtY29sb3I6IGhzbCh2YXIoLS1jb2xvci1hY2NlbnQtaHNsKSk7XG59XG5cbmJvZHkgPiAudGl0bGViYXIgOi0tcGFyZW50KGJvZHkpOmlzKC5pcy1mb2N1c2VkKSAudGl0bGViYXItYnV0dG9uLCBib2R5IC53b3Jrc3BhY2UgPiAud29ya3NwYWNlLXJpYmJvbi5zaWRlLWRvY2stcmliYm9uIDotLXBhcmVudChib2R5KTppcyguaXMtZm9jdXNlZCkgLnRpdGxlYmFyLWJ1dHRvbiB7XG4gIGNvbG9yOiB2YXIoLS10aXRsZWJhci10ZXh0LWNvbG9yKTtcbn1cblxuYm9keSA+IC50aXRsZWJhciA6LS1wYXJlbnQoYm9keSk6aXMoLmlzLWZvY3VzZWQpIDotLXBhcmVudChib2R5KTppcygubW9kLXdpbmRvd3MpIC50aXRsZWJhci1idXR0b24sIGJvZHkgLndvcmtzcGFjZSA+IC53b3Jrc3BhY2UtcmliYm9uLnNpZGUtZG9jay1yaWJib24gOi0tcGFyZW50KGJvZHkpOmlzKC5pcy1mb2N1c2VkKSA6LS1wYXJlbnQoYm9keSk6aXMoLm1vZC13aW5kb3dzKSAudGl0bGViYXItYnV0dG9uIHtcbiAgLS10aXRsZWJhci10ZXh0LWNvbG9yOiB2YXIoLS10aXRsZWJhci10ZXh0LWNvbG9yLWZvY3VzZWQpO1xuICAtLWJhY2tncm91bmQtbW9kaWZpZXItaG92ZXI6IHZhcigtLWZsdWVudC1mcmFtZS1idXR0b24tYmFja2dyb3VuZC1ob3Zlci1mb2N1c2VkKTtcbn0iLCIvLyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLVxuLy8gQ2hhbmdlIHRoZSB3aW5kb3cgZnJhbWUgZGVjb3JhdGlvbnMgKG1pbmltaXplLCBtYXhpbWl6ZSwgY2xvc2UgYnV0dG9ucykgdG9cbi8vIGxvb2sgbW9yZSBsaWtlIFdpbmRvd3MgMTEuXG4vLyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLVxuXG4kcmVjdDogMTBweDtcbiR0aXRsZWJhci1tYXJnaW46IDRweDtcbiRoLXBhZGRpbmc6IDE4cHg7XG4kdi1oZWlnaHQ6IDQwcHg7XG4kdi1oZWlnaHQtaW4tb2JzaWRpYW4tZnJhbWU6IDI4cHg7XG5cbi8vIFJlc2l6ZSB0aGUgdGl0bGViYXIgYnV0dG9ucy5cbiV0aXRsZWJhciAjeyRzZWxlY3Qtd2hlbi13aW5kb3dzfSAudGl0bGViYXItYnV0dG9uIHtcblx0Ji5tb2QtbWluaW1pemUsXG5cdCYubW9kLW1heGltaXplLFxuXHQmLm1vZC1jbG9zZSB7XG5cdFx0cGFkZGluZzogMCAkaC1wYWRkaW5nICFpbXBvcnRhbnQ7XG5cdH1cblxuXHRAaW5jbHVkZSB3aGVuLWZyYW1lKFwiaGlkZGVuXCIpIHtcblx0XHRoZWlnaHQ6ICR2LWhlaWdodDtcblx0fVxuXG5cdEBpbmNsdWRlIHdoZW4tZnJhbWUoXCJvYnNpZGlhblwiKSB7XG5cdFx0aGVpZ2h0OiAkdi1oZWlnaHQtaW4tb2JzaWRpYW4tZnJhbWU7XG5cdH1cbn1cblxuYm9keSAjeyRzZWxlY3Qtd2hlbi13aW5kb3dzfSB7XG5cdCRvcmlnaW5hbC1yaWdodC1zcGFjZTogMTI2cHg7XG5cdCR1cGRhdGVkLXJpZ2h0LXNwYWNlOiAkb3JpZ2luYWwtcmlnaHQtc3BhY2UgLSAoMyAqIDE0cHgpICsgKDMgKiAkaC1wYWRkaW5nKTtcblx0LS1mcmFtZS1yaWdodC1zcGFjZTogI3skdXBkYXRlZC1yaWdodC1zcGFjZSArICR0aXRsZWJhci1tYXJnaW59ICFpbXBvcnRhbnQ7XG59XG5cbi8vIENoYW5nZSB0aGUgaWNvbnMuXG4ldGl0bGViYXIgI3skc2VsZWN0LXdoZW4td2luZG93c30gLnRpdGxlYmFyLWJ1dHRvbiB7XG5cdHBvc2l0aW9uOiByZWxhdGl2ZTtcblxuXHQmLm1vZC1taW5pbWl6ZSxcblx0Ji5tb2QtbWF4aW1pemUsXG5cdCYubW9kLWNsb3NlIHtcblx0XHQmID4gc3ZnIHtcblx0XHRcdHZpc2liaWxpdHk6IGhpZGRlbjtcblx0XHRcdHdpZHRoOiAkcmVjdDtcblx0XHRcdGhlaWdodDogJHJlY3Q7XG5cdFx0fVxuXG5cdFx0Jjo6YmVmb3JlLFxuXHRcdCY6OmFmdGVyIHtcblx0XHRcdGRpc3BsYXk6IGJsb2NrO1xuXHRcdFx0Y29udGVudDogXCJcIjtcblxuXHRcdFx0cG9zaXRpb246IGFic29sdXRlO1xuXHRcdFx0dG9wOiBjYWxjKDEwMCUgLyAyIC0gbWF0aC5kaXYoJHJlY3QsIDIpKTtcblx0XHRcdGxlZnQ6ICRoLXBhZGRpbmc7XG5cdFx0XHR3aWR0aDogJHJlY3Q7XG5cdFx0XHRoZWlnaHQ6ICRyZWN0O1xuXHRcdFx0YmFja2dyb3VuZDogY3VycmVudENvbG9yO1xuXHRcdH1cblxuXHRcdCY6OmFmdGVyIHtcblx0XHRcdGRpc3BsYXk6IG5vbmU7XG5cdFx0fVxuXHR9XG59XG5cbi8vIE1pbmltaXplIGJ1dHRvbi5cbiV0aXRsZWJhciAjeyRzZWxlY3Qtd2hlbi13aW5kb3dzfSAubW9kLW1pbmltaXplOjpiZWZvcmUge1xuXHRAaW5jbHVkZSB3aGVuLXdpbmRvd3Mge1xuXHRcdCRzdHJva2U6IDFweDtcblx0XHQkb2ZmczogNS41cHg7XG5cblx0XHRjbGlwLXBhdGg6IHBvbHlnb24oXG5cdFx0XHQwICgkb2ZmcyAtIG1hdGguZGl2KCRzdHJva2UsIDIpKSxcblx0XHRcdDAgKCRvZmZzICsgbWF0aC5kaXYoJHN0cm9rZSwgMikpLFxuXHRcdFx0JHJlY3QgKCRvZmZzICsgbWF0aC5kaXYoJHN0cm9rZSwgMikpLFxuXHRcdFx0JHJlY3QgKCRvZmZzIC0gbWF0aC5kaXYoJHN0cm9rZSwgMikpXG5cdFx0KTtcblx0fVxufVxuXG4vLyBNYXhpbWl6ZSBidXR0b24uXG4ldGl0bGViYXIgI3skc2VsZWN0LXdoZW4td2luZG93c30gI3skc2VsZWN0LXdoZW4tYXBwLW5vdC1tYXhpbWl6ZWR9IC5tb2QtbWF4aW1pemUge1xuXHQkc3Ryb2tlOiAxcHg7XG5cblx0Jjo6YmVmb3JlIHtcblx0XHRjbGlwLXBhdGg6IHBvbHlnb24oXG5cdFx0XHQwIDAsXG5cdFx0XHQwICRyZWN0LFxuXHRcdFx0JHJlY3QgJHJlY3QsXG5cdFx0XHQkcmVjdCAwLFxuXHRcdFx0MCAwLFxuXHRcdFx0JHN0cm9rZSAkc3Ryb2tlLFxuXHRcdFx0KCRyZWN0IC0gJHN0cm9rZSkgJHN0cm9rZSxcblx0XHRcdCgkcmVjdCAtICRzdHJva2UpICgkcmVjdCAtICRzdHJva2UpLFxuXHRcdFx0JHN0cm9rZSAoJHJlY3QgLSAkc3Ryb2tlKSxcblx0XHRcdCRzdHJva2UgJHN0cm9rZVxuXHRcdCk7XG5cdH1cbn1cblxuJXRpdGxlYmFyICN7JHNlbGVjdC13aGVuLXdpbmRvd3N9ICN7JHNlbGVjdC13aGVuLWFwcC1tYXhpbWl6ZWR9IC5tb2QtbWF4aW1pemUge1xuXHQkc3Ryb2tlOiAxcHg7XG5cblx0Jjo6YmVmb3JlIHtcblx0XHRjbGlwLXBhdGg6IHBvbHlnb24oXG5cdFx0XHQwICgycHgpLFxuXHRcdFx0MCAoJHJlY3QpLFxuXHRcdFx0KCRyZWN0IC0gMnB4KSAoJHJlY3QpLFxuXHRcdFx0KCRyZWN0IC0gMnB4KSAoMnB4KSxcblx0XHRcdDAgKDJweCksXG5cdFx0XHQkc3Ryb2tlICgycHggKyAkc3Ryb2tlKSxcblx0XHRcdCgkcmVjdCAtICRzdHJva2UgLSAycHgpICgycHggKyAkc3Ryb2tlKSxcblx0XHRcdCgkcmVjdCAtICRzdHJva2UgLSAycHgpICgkcmVjdCAtICRzdHJva2UpLFxuXHRcdFx0JHN0cm9rZSAoJHJlY3QgLSAkc3Ryb2tlKSxcblx0XHRcdCRzdHJva2UgKDJweCArICRzdHJva2UpXG5cdFx0KTtcblx0fVxuXG5cdCY6OmFmdGVyIHtcblx0XHRkaXNwbGF5OiBibG9jaztcblx0XHRjbGlwLXBhdGg6IHBvbHlnb24oXG5cdFx0XHQoMnB4KSAzcHgsXG5cdFx0XHQoMnB4KSAwLFxuXHRcdFx0JHJlY3QgMCxcblx0XHRcdCRyZWN0ICgkcmVjdCAtIDJweCksXG5cdFx0XHQoJHJlY3QgLSAzcHgpICgkcmVjdCAtIDJweCksXG5cdFx0XHQoJHJlY3QgLSAzcHgpICgkcmVjdCAtIDJweCksXG5cdFx0XHQoJHJlY3QgLSAkc3Ryb2tlKSAoJHJlY3QgLSAzcHgpLFxuXHRcdFx0KCRyZWN0IC0gJHN0cm9rZSkgJHN0cm9rZSxcblx0XHRcdCgzcHgpICRzdHJva2UsXG5cdFx0XHQoM3B4KSAzcHhcblx0XHQpO1xuXHR9XG59XG5cbi8vIENsb3NlIGJ1dHRvbi5cbiV0aXRsZWJhciAjeyRzZWxlY3Qtd2hlbi13aW5kb3dzfSAubW9kLWNsb3NlOjpiZWZvcmUge1xuXHQkc3Ryb2tlOiAxcHg7XG5cblx0Y2xpcC1wYXRoOiBwb2x5Z29uKFxuXHRcdG1hdGguZGl2KCRyZWN0LCAyKSAobWF0aC5kaXYoJHJlY3QsIDIpIC0gbWF0aC5kaXYoJHN0cm9rZSwgMikpLFxuXHRcdG1hdGguZGl2KCRzdHJva2UsIDIpIDAsXG5cdFx0MCBtYXRoLmRpdigkc3Ryb2tlLCAyKSxcblx0XHQobWF0aC5kaXYoJHJlY3QsIDIpIC0gbWF0aC5kaXYoJHN0cm9rZSwgMikpIG1hdGguZGl2KCRyZWN0LCAyKSxcblx0XHQwICgkcmVjdCAtIG1hdGguZGl2KCRzdHJva2UsIDIpKSxcblx0XHRtYXRoLmRpdigkc3Ryb2tlLCAyKSAoJHJlY3QpLFxuXHRcdChtYXRoLmRpdigkcmVjdCwgMikpIChtYXRoLmRpdigkcmVjdCwgMikgKyBtYXRoLmRpdigkc3Ryb2tlLCAyKSksXG5cdFx0KCRyZWN0IC0gbWF0aC5kaXYoJHN0cm9rZSwgMikpICgkcmVjdCksXG5cdFx0KCRyZWN0KSAoJHJlY3QgLSBtYXRoLmRpdigkc3Ryb2tlLCAyKSksXG5cdFx0KG1hdGguZGl2KCRyZWN0LCAyKSArIG1hdGguZGl2KCRzdHJva2UsIDIpKSBtYXRoLmRpdigkcmVjdCwgMiksXG5cdFx0KCRyZWN0KSBtYXRoLmRpdigkc3Ryb2tlLCAyKSxcblx0XHQoJHJlY3QgLSBtYXRoLmRpdigkc3Ryb2tlLCAyKSkgMFxuXHQpO1xufVxuIiwiLy8gQXBwbGllcyB0aGUgY29udGVudHMgYmFzZWQgb24gdGhlICdBcHBlYXJhbmNlIC0+IFdpbmRvdyBGcmFtZSBTdHlsZScuXG4vLyBQb3NzaWJsZSBzdHlsZXM6XG4vLyAgLSBgd2luZG93c2Bcbi8vICAtIGBtYWNvc2Bcbi8vICAtIGBsaW51eGBcbi8vXG4vLyBAcGFyYW0gJG9zIHtzdHJpbmd9IFRoZSBvcGVyYXRpbmcgc3lzdGVtLlxuQG1peGluIHdoZW4tZnJhbWUoJHN0eWxlKSB7XG5cdEBpZiAkc3R5bGUgPT0gXCJoaWRkZW5cIiB7XG5cdFx0Oi0tcGFyZW50KGJvZHkpOmlzKC5pcy1oaWRkZW4tZnJhbWVsZXNzKSB7XG5cdFx0XHRAY29udGVudDtcblx0XHR9XG5cdH0gQGVsc2UgaWYgJHN0eWxlID09IFwib2JzaWRpYW5cIiB7XG5cdFx0Oi0tcGFyZW50KGJvZHkpOmlzKC5pcy1mcmFtZWxlc3M6bm90KC5pcy1oaWRkZW4tZnJhbWVsZXNzKSkge1xuXHRcdFx0QGNvbnRlbnQ7XG5cdFx0fVxuXHR9IEBlbHNlIGlmICRzdHlsZSA9PSBcIm9ic2lkaWFuXCIge1xuXHRcdDotLXBhcmVudChib2R5KTppcyguaXMtZnJhbWVsZXNzOm5vdCguaXMtbmF0aXZlKSkge1xuXHRcdFx0QGNvbnRlbnQ7XG5cdFx0fVxuXHR9IEBlbHNlIHtcbiAgICAgICAgQGVycm9yIFwidW5rbm93biBmcmFtZSBzdHlsZTogI3skc3R5bGV9XCI7XG4gICAgfVxufVxuIiwiLy8gQXBwbGllcyB0aGUgY29udGVudHMgd2hlbiB0aGUgYXBwbGljYXRpb24gaXMgcnVubmluZyBvbiBhIHNwZWNpZmljIG9wZXJhdGluZyBzeXN0ZW0uXG4vLyBQb3NzaWJsZSBPU2VzOlxuLy8gIC0gYHdpbmRvd3NgXG4vLyAgLSBgbWFjYFxuLy8gIC0gYGxpbnV4YFxuLy9cbi8vIEBwYXJhbSAkb3Mge3N0cmluZ30gVGhlIG9wZXJhdGluZyBzeXN0ZW0uXG4kc2VsZWN0LXdoZW4td2luZG93czogXCI6LS1wYXJlbnQoYm9keSk6aXMoLm1vZC13aW5kb3dzKVwiO1xuJHNlbGVjdC13aGVuLW1hYzogXCI6LS1wYXJlbnQoYm9keSk6aXMoLm1vZC1tYWNvcylcIjtcbiRzZWxlY3Qtd2hlbi1saW51eDogXCI6LS1wYXJlbnQoYm9keSk6aXMoLm1vZC1saW51eClcIjtcblxuQG1peGluIHdoZW4tb3MoJG9zKSB7XG5cdEBpZiAkb3MgPT0gXCJ3aW5kb3dzXCIge1xuXHRcdCN7JHNlbGVjdC13aGVuLXdpbmRvd3N9IHtcblx0XHRcdEBjb250ZW50O1xuXHRcdH1cblx0fSBAZWxzZSBpZiAkb3MgPT0gXCJtYWNcIiB7XG5cdFx0I3skc2VsZWN0LXdoZW4tbWFjfSB7XG5cdFx0XHRAY29udGVudDtcblx0XHR9XG5cdH0gQGVsc2UgaWYgJG9zID09IFwibGludXhcIiB7XG5cdFx0I3skc2VsZWN0LXdoZW4tbGludXh9IHtcblx0XHRcdEBjb250ZW50O1xuXHRcdH1cblx0fSBAZWxzZSB7XG5cdFx0QGVycm9yIFwidW5rbm93biBvczogI3skb3N9XCI7XG5cdH1cbn1cblxuLy8gQXBwbGllcyB0aGUgY29udGVudHMgd2hlbiB0aGUgYXBwbGljYXRpb24gaXMgcnVubmluZyBvbiBhIFdpbmRvd3Mgb3BlcmF0aW5nIHN5c3RlbS5cbkBtaXhpbiB3aGVuLXdpbmRvd3Mge1xuXHRAaW5jbHVkZSB3aGVuLW9zKFwid2luZG93c1wiKSB7XG5cdFx0QGNvbnRlbnQ7XG5cdH1cbn1cbiIsIi8vIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLVxuLy8gQWxsb3cgdGFiIGhlYWRlcnMgdG8gYWRvcHQgYmFja2dyb3VuZCBjb2xvciBvZiBmcmFtZS5cbi8vIFRoaXMgZml0cyBtb3JlIGluIGxpbmUgd2l0aCBFeHBsb3JlciBhbmQgV2luZG93cyBUZXJtaW5hbC5cbi8vIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLVxuXG4ld29ya3NwYWNlID4gLm1vZC1yb290IHtcblx0YmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7XG59XG4iLCIvLyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS1cbi8vIEFkZHMgYW4gYWNjZW50LWNvbG9yZWQgYmFyIHRvIGhlbHAgc2lnbmlmeSB3aGljaCBzaWRlYmFyIHRhYiBpcyBhY3RpdmUuXG4vLyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS1cblxuJXdvcmtzcGFjZS1zaWRlYmFyIHtcblx0LndvcmtzcGFjZS10YWItaGVhZGVyLmlzLWFjdGl2ZSA+IC53b3Jrc3BhY2UtdGFiLWhlYWRlci1pbm5lciB7XG5cdFx0JHBhZGRpbmc6IDZweDtcblx0XHRwb3NpdGlvbjogcmVsYXRpdmU7XG5cblx0XHQmOjpiZWZvcmUge1xuXHRcdFx0Y29udGVudDogXCJcIjtcblx0XHRcdGRpc3BsYXk6IGJsb2NrO1xuXHRcdFx0cG9zaXRpb246IGFic29sdXRlO1xuXHRcdFx0ZGlzcGxheTogYmxvY2s7XG5cblx0XHRcdGJvcmRlci1yYWRpdXM6IDA7XG5cblx0XHRcdGxlZnQ6ICRwYWRkaW5nO1xuXHRcdFx0cmlnaHQ6ICRwYWRkaW5nO1xuXHRcdFx0d2lkdGg6IGNhbGMoMTAwJSAtICN7JHBhZGRpbmcgKiAyfSk7XG5cdFx0XHRib3R0b206IDJweDtcblx0XHRcdGhlaWdodDogMnB4O1xuXHRcdFx0Ym9yZGVyLXJhZGl1czogNnB4O1xuXG5cdFx0XHRiYWNrZ3JvdW5kLWNvbG9yOiBoc2wodmFyKC0tY29sb3ItYWNjZW50LWhzbCkpO1xuXHRcdH1cblx0fVxufVxuIiwiJXRpdGxlYmFyICN7JHNlbGVjdC13aGVuLWFwcC1mb2N1c30ge1xuXG4gICAgLy8gQ2hhbmdlIHRoZSB0aXRsZWJhciBidXR0b24gY29sb3JzLlxuICAgIC50aXRsZWJhci1idXR0b24ge1xuXHQgICAgY29sb3I6IHZhcigtLXRpdGxlYmFyLXRleHQtY29sb3IpO1xuICAgIH1cblxufVxuIiwiJXRpdGxlYmFyICN7JHNlbGVjdC13aGVuLWFwcC1mb2N1c30ge1xuXG4gICAgLy8gQ2hhbmdlIHRoZSB0aXRsZWJhciBidXR0b24gY29sb3JzLlxuICAgIEBpbmNsdWRlIHdoZW4td2luZG93cyB7XG4gICAgICAgIC50aXRsZWJhci1idXR0b24ge1xuICAgICAgICAgICAgLS10aXRsZWJhci10ZXh0LWNvbG9yOiB2YXIoLS10aXRsZWJhci10ZXh0LWNvbG9yLWZvY3VzZWQpO1xuICAgICAgICAgICAgLS1iYWNrZ3JvdW5kLW1vZGlmaWVyLWhvdmVyOiB2YXIoLS1mbHVlbnQtZnJhbWUtYnV0dG9uLWJhY2tncm91bmQtaG92ZXItZm9jdXNlZCk7XG4gICAgICAgIH1cbiAgICB9XG5cbn1cblxuJXJpYmJvbiAjeyRzZWxlY3Qtd2hlbi1hcHAtZm9jdXN9IHtcbiAgICAtLXJpYmJvbi1iYWNrZ3JvdW5kOiB2YXIoLS1yaWJib24tYmFja2dyb3VuZC1mb2N1c2VkKTtcbiAgICAtLXJpYmJvbi1iYWNrZ3JvdW5kLWNvbGxhcHNlZDogdmFyKC0tcmliYm9uLWJhY2tncm91bmQtY29sbGFwc2VkLWZvY3VzZWQpO1xuICAgIGJvcmRlci1yaWdodC1jb2xvcjogdmFyKC0tdGFiLW91dGxpbmUtY29sb3ItZm9jdXNlZCk7XG59XG5cbiVyaWJib24ubW9kLWxlZnQgI3skc2VsZWN0LXdoZW4tYXBwLWZvY3VzfSB7XG4gICAgYm9yZGVyLXJpZ2h0LWNvbG9yOiB2YXIoLS10YWItb3V0bGluZS1jb2xvci1mb2N1c2VkKTtcbn1cblxuJXJpYmJvbi5tb2QtcmlnaHQgI3skc2VsZWN0LXdoZW4tYXBwLWZvY3VzfSB7XG4gICAgYm9yZGVyLWxlZnQtY29sb3I6IHZhcigtLXRhYi1vdXRsaW5lLWNvbG9yLWZvY3VzZWQpO1xufVxuIl19 */

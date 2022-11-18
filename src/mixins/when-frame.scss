@@ -1,0 +1,24 @@
+// Applies the contents based on the 'Appearance -> Window Frame Style'.
+// Possible styles:
+//  - `windows`
+//  - `macos`
+//  - `linux`
+//
+// @param $os {string} The operating system.
+@mixin when-frame($style) {
+	@if $style == "hidden" {
+		:--parent(body):is(.is-hidden-frameless) {
+			@content;
+		}
+	} @else if $style == "obsidian" {
+		:--parent(body):is(.is-frameless:not(.is-hidden-frameless)) {
+			@content;
+		}
+	} @else if $style == "obsidian" {
+		:--parent(body):is(.is-frameless:not(.is-native)) {
+			@content;
+		}
+	} @else {
+        @error "unknown frame style: #{$style}";
+    }
+}

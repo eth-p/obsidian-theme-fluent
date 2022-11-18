@@ -1,0 +1,14 @@
+// Applies the contents when the application window is maximized.
+$select-when-app-maximized: ":--parent(body):is(.is-maximized)";
+@mixin when-app-maximized {
+    #{$select-when-app-maximized} {
+        @content;
+    }
+}
+
+$select-when-app-not-maximized: ":--parent(body):is(:not(.is-maximized))";
+@mixin when-app-not-maximized {
+    #{$select-when-app-not-maximized} {
+        @content;
+    }
+}

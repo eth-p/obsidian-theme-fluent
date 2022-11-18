@@ -1,0 +1,115 @@
+@use "sass:color";
+@use "sass:map";
+@use "sass:list";
+
+@use "animations";
+
+@import "utils";
+@import "config";
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Core:
+// ---------------------------------------------------------------------------------------------------------------------
+
+@import "./core/misc";
+@import "./core/focus-colors";
+@import "./core/frame-decoration-colors";
+@import "./core/header-colors";
+
+@import "./core/mid-header-rebox";
+
+@import "./fixes/fullscreen-titlebar-color";
+@import "./fixes/fullscreen-titlebar-padding";
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Tweaks:
+//
+// Changes to make the L&F more consistent with Windows 11, at the cost of
+// probably breaking whenever the DOM or styles of Obsidian are changed.
+// ---------------------------------------------------------------------------------------------------------------------
+
+@import "./tweaks/better-transluence";
+@import "./tweaks/focus-colors-transition";
+@import "./tweaks/frame-decoration-win11";
+@import "./tweaks/weld-side-dock-and-title";
+@import "./tweaks/weld-nav-headers-and-title";
+@import "./tweaks/resize-drag-handles";
+@import "./tweaks/tab-header-active";
+
+@import "./tweaks/style-tooltip";
+@import "./tweaks/style-menu";
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Theme Colors:
+// ---------------------------------------------------------------------------------------------------------------------
+
+// Mixin for populating variables from a theme color map.
+@mixin theme($colors) {
+	--fluent-focus-accent: #{color.hue(map.get($colors, "focus-accent"))};
+
+	// Window frame title bar.
+	@include focus-accent-var("titlebar-background", map.get($colors, "frame-title"));
+	@include focus-accent-var("ribbon-background", map.get($colors, "frame-title"));
+	@include focus-accent-var("ribbon-background-collapsed", map.get($colors, "frame-title"));
+	@include focus-accent-var("tab-outline-color", map.get($colors, "frame-tab-border"));
+	&.is-translucent:not(.is-frameless) {
+		--titlebar-background: #{list.nth(map.get($colors, "frame-title"), 6)};
+		--titlebar-background-focused: #{list.nth(map.get($colors, "frame-title"), 6)};
+	}
+
+	// Window frame secondary.
+	@include focus-accent-var("fluent-frame-secondary", map.get($colors, "frame-secondary"));
+
+	// Window frame decorations.
+	--fluent-frame-button-text: #{map.get($colors, "frame-button-text")};
+	--fluent-frame-button-text-hover: #{map.get($colors, "frame-button-text-hover")};
+	--fluent-frame-close-text-hover: #{map.get($colors, "frame-button-close-text-hover")};
+	--fluent-frame-close-background-hover: #{map.get($colors, "frame-button-close-background")};
+	--fluent-frame-button-background-hover: #{map.get($colors, "frame-button-background-hover")};
+	--fluent-frame-button-background-hover-focused: hsla(
+		var(--fluent-focus-accent),
+		95%,
+		#{color.lightness(map.get($colors, "focus-accent")) * 0.7},
+		#{color.opacity(map.get($colors, "frame-button-background-hover"))}
+	);
+	&.is-translucent {
+		--fluent-frame-button-background-hover-focused: #{map.get($colors, "frame-button-background-hover")};
+	}
+
+	// Misc.
+	--background-secondary: #{map.get($colors, "sidebar-background")};
+	--background-modifier-hover: #{map.get($colors, "hover-overlay")};
+	--icon-color: #{map.get($colors, "icon")};
+	--icon-color-focused: #{map.get($colors, "icon-focused")};
+	--icon-color-hover: #{map.get($colors, "icon-hover")};
+
+	--fluent-tooltip-background: #{map.get($colors, "tooltip-background")};
+	--fluent-tooltip-border: #{map.get($colors, "tooltip-border")};
+	--fluent-tooltip-text: #{map.get($colors, "tooltip-text")};
+
+	--fluent-menu-background: #{map.get($colors, "menu-background")};
+	--fluent-menu-border: #{map.get($colors, "menu-border")};
+	--fluent-menu-text: #{map.get($colors, "menu-text")};
+
+
+	// Tabs.
+	--tab-text-color: #{map.get($colors, "tab-text")};
+	--tab-text-color-focused: #{map.get($colors, "tab-text")};
+}
+
+body {
+	--fluent-backdrop-blur: #{$backdrop-blur};
+	--icon-opacity-hover: var(--icon-opacity);
+
+	&.show-view-header {
+		--fluent-nav-height: #{$navbar-height};
+	}
+}
+
+body.theme-light {
+	@include theme($light-theme);
+}
+
+body.theme-dark {
+	@include theme($dark-theme);
+}

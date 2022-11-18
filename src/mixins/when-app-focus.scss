@@ -1,0 +1,7 @@
+// Applies the contents when the application window has focus.
+$select-when-app-focus: ":--parent(body):is(.is-focused)";
+@mixin when-app-focus {
+    #{$select-when-app-focus} {
+        @content;
+    }
+}

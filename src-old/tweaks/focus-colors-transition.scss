@@ -14,7 +14,7 @@ body.is-frameless {
 
 	// Workspace headers.
 	#{$select-workspace} {
-		#{$select-workspace-headers} {
+		#{$select-app-headers} {
 			@include transition-frame-background;
 		}
 	}

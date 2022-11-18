@@ -1,0 +1,7 @@
+// Applies the contents when the 'Appearance -> Translucent Window' option is enabled.
+$select-when-app-translucent: ":--parent(body):is(.is-translucent)";
+@mixin when-app-translucent {
+    #{$select-when-app-translucent} {
+        @content;
+    }
+}

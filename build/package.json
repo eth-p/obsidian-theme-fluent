@@ -4,11 +4,27 @@
   "description": "",
   "author": "eth-p",
   "license": "MIT",
-  "scripts":{
-    "build": "sass ../src/fluent.scss:../theme.css",
-    "watch": "sass --watch --embed-sources --embed-source-map ../src/fluent.scss:../theme.css"
+  "scripts": {
+    "build": "gulp build",
+    "start": "gulp watch"
   },
   "dependencies": {
+    "chalk": "^4.1.2",
+    "cssnano": "^5.1.14",
+    "fancy-log": "^2.0.0",
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-if": "^3.0.0",
+    "gulp-noop": "^1.0.1",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.0.1",
+    "gulp-prettier": "^4.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "postcss-cli": "^10.0.0",
+    "postcss-selector-parser": "^6.0.10",
+    "prettier": "^2.7.1",
     "sass": "^1.55.0"
   }
 }

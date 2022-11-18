@@ -1,0 +1,113 @@
+// -----------------------------------------------------------------------------
+// Animation Speeds:
+// -----------------------------------------------------------------------------
+
+$enable-fluent-focus-accent-animation: true;
+
+// How long it takes for the window frame to fade between the active colour
+// and the unfocused colour.
+$animation-speed-window-focus: 0.4s;
+
+// How long it takes for button hover effects to fade in and out.
+$animation-speed-button-focus: 0.2s;
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Translucency:
+// ---------------------------------------------------------------------------------------------------------------------
+
+$translucency: 30%;
+$backdrop-blur: 20px;
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Size:
+// ---------------------------------------------------------------------------------------------------------------------
+
+$navbar-height: 42px;
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Colours: Light Theme
+// ---------------------------------------------------------------------------------------------------------------------
+
+$light-theme: (
+	// Window Focus Color Accent.
+	focus-accent: #005eff,
+
+	// Frame backgrounds.
+	// As (focused:saturation, focused:lightness, faded:lightness,
+	//     no-translucency, native:focused:saturation, native:translucent)
+	// frame-title: (41.5%, 87.3%, 91%),
+	frame-title: (41.5%, 87.3%, 95.294%, false, 42.85%, #ffffff),
+	frame-tab-border: (27.5%, 82.2%, 85.5%, false, 0%),
+	frame-secondary: (26.84%, 96.27%, 97.25%, true, 0%, #000),
+
+	// Frame decorations: minimize, maximize, close.
+	frame-button-background-hover: #00000015,
+	frame-button-text: #929292,
+	frame-button-text-focused: #000000,
+	frame-button-close-background: #c42b1c,
+	frame-button-close-text-hover: #ffffff,
+
+	// Hover.
+	hover-overlay: #0000000d,
+
+	// Misc.
+	icon: #191919,
+	icon-focused: #191919,
+	icon-hover: #191919,
+
+	tooltip-background: #000,
+	tooltip-border: #000,
+	tooltip-text: #fff,
+
+	menu-background: transparentize(#f7f7f7, $translucency * 0.01),
+	menu-border: #eaeaea,
+	menu-text: #000,
+
+	// Tabs.
+	tab-text: #555555,
+
+	// Sidebar.
+	sidebar-background: #ffffff,
+);
+
+$dark-theme: (
+	// Window Focus Color Accent.
+	focus-accent: #005eff,
+
+	// Frame backgrounds.
+	// As (focused:saturation, focused:lightness, faded:lightness,
+	//     no-translucency, native:focused:saturation, native:translucent)
+	// frame-title: (41.5%, 87.3%, 91%),
+	frame-title: (100%, 6.27%, 13.72%, false, 42.85%, #202020),
+	frame-tab-border: (100%, 6.08%, 11.37%, false, 0%),
+	frame-secondary: (10.71%, 15.73%, 17.25%, true, 0%, #000),
+
+	// Frame decorations: minimize, maximize, close.
+	frame-button-background-hover: #ffffff15,
+	frame-button-text: #929292,
+	frame-button-text-focused: #000000,
+	frame-button-close-background: #c42b1c,
+	frame-button-close-text-hover: #ffffff,
+
+	// Hover.
+	hover-overlay: #ffffff0d,
+
+	// Misc.
+	icon: #e8eaed,
+	icon-focused: #e8eaed,
+	icon-hover: #e8eaed,
+
+	tooltip-background: #171717,
+	tooltip-border: #171717,
+	tooltip-text: #dcdcdc,
+
+	menu-background: transparentize(#2a2a2a, $translucency * 0.01),
+	menu-border: #3c3c3c,
+	menu-text: #e2e2e2,
+
+	// Tabs.
+	tab-text: #cccccc,
+
+	// Sidebar.
+	sidebar-background: #1e1e1e,
+);

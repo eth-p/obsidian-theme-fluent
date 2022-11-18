@@ -1,0 +1,27 @@
+@import "../selectors";
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Remove the border separating the side dock from the title bar.
+// ---------------------------------------------------------------------------------------------------------------------
+
+#{$select-workspace} {
+	#{$select-workspace-main-content} > .workspace-leaf-content > .view-header,
+	#{$select-workspace-sidebar-content} > .workspace-leaf-content > .view-header,
+	#{$select-workspace-sidebar-content} > .workspace-leaf-content > .nav-header {
+		// Change the view/nav height to be a fixed size, and not depend on the viewport height.
+		min-height: var(--fluent-nav-height);
+		height: var(--fluent-nav-height);
+
+		// Add a border to the bottom.
+		border-bottom: var(--divider-color) 1px solid;
+	}
+
+	// Force the sidebar nav-headers to be visible.
+	// This is needed to keep the spacing consistent.
+	#{$select-workspace-sidebar-content} > .workspace-leaf-content > .view-header {
+		display: block !important;
+		&>* {
+			display: none;
+		}
+	}
+}

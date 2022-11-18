@@ -1,0 +1,8 @@
+%titlebar #{$select-when-app-focus} {
+
+    // Change the titlebar button colors.
+    .titlebar-button {
+	    color: var(--titlebar-text-color);
+    }
+
+}

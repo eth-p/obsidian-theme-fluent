@@ -1,0 +1,7 @@
+// The main workspace.
+// This includes the sidebars and the the content panes.
+%workspace {}
+
+body .workspace {
+    @extend %workspace;
+}

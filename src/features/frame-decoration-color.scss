@@ -1,0 +1,8 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// Allow tab headers to adopt background color of frame.
+// This fits more in line with Explorer and Windows Terminal.
+// ---------------------------------------------------------------------------------------------------------------------
+
+%workspace > .mod-root {
+	background: transparent;
+}

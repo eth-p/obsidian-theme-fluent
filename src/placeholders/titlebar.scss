@@ -1,0 +1,5 @@
+%titlebar {}
+
+body > .titlebar {
+    @extend %titlebar;
+}

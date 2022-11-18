@@ -4,8 +4,8 @@ $select-tooltip: ".tooltip";
 $select-menu: ".menu";
 
 // Header components for the app.
-// e.g. tab bar background, sidebar headers.
-$select-workspace-headers: "\
+// (e.g. tab bar background, ribbon.)
+$select-app-headers: "\
 	.mod-top .workspace-tab-header-container, \
 	.workspace-tab-header-container, \
 	.workspace-ribbon.side-dock-ribbon.mod-left::before";
@@ -26,6 +26,14 @@ $select-workspace-main-content: "\
 
 $select-workspace-sidebar-content: "\
 	.workspace-split:not(.mod-root) .workspace-tab-container > .workspace-leaf";
+
+// Header components for the workspace.
+// (e.g. view header, sidebar header)
+$select-workspace-headers: "\
+	#{$select-workspace-main-content} > .workspace-leaf-content > .view-header, \
+	#{$select-workspace-sidebar-content} > .workspace-leaf-content > .view-header, \
+	#{$select-workspace-sidebar-content} > .workspace-leaf-content > .nav-header \
+";
 
 // The components of the middle pane.
 $select-mid-container: "#{select-workspace} > .mod-root > .workspace-tabs > .workspace-tab-container > .workspace-leaf > .workspace-leaf-content";

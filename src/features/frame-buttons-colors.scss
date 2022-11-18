@@ -1,0 +1,27 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// Change frame decoration button hover colors.
+// ---------------------------------------------------------------------------------------------------------------------
+
+%titlebar #{$select-when-app-focus} {
+
+    // Minimize/maximize buttons.
+    // Uses a different color scheme than other title elements.
+    .titlebar-button {
+    	--titlebar-text-color: var(--fluent-frame-button-text);
+	    --titlebar-text-color-focused: var(--fluent-frame-button-text-focused);
+    	--background-modifier-hover: var(--fluent-frame-button-background-hover);
+    }
+
+    // Close button.
+    // Windows 11 uses a darker red than the default provided by Obsidian.
+    @include when-windows {
+        .titlebar-button.mod-close {
+            &:hover,
+            &:focus {
+                --background-modifier-error: var(--fluent-frame-close-background-hover);
+                color: var(--fluent-frame-close-text-hover) !important;
+            }
+        }
+    }
+
+}
